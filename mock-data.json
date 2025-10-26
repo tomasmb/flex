@@ -1,0 +1,704 @@
+{
+  "status": "success",
+  "result": [
+    {
+      "id": 8000,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 5,
+      "publicReview": "Spotless flat, seamless check-in, and fast responses.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 10 },
+        { "category": "communication", "rating": 10 },
+        { "category": "check_in", "rating": 10 },
+        { "category": "location", "rating": 9 },
+        { "category": "accuracy", "rating": 10 },
+        { "category": "value", "rating": 9 }
+      ],
+      "submittedAt": "2025-07-12 13:25:41",
+      "guestName": "Alice Nguyen",
+      "listingName": "2B N1 A - 29 Shoreditch Heights"
+    },
+    {
+      "id": 8001,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 4,
+      "publicReview": "Great place overall; a little street noise at night.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 9 },
+        { "category": "communication", "rating": 9 },
+        { "category": "check_in", "rating": 9 },
+        { "category": "location", "rating": 8 },
+        { "category": "accuracy", "rating": 9 },
+        { "category": "value", "rating": 8 }
+      ],
+      "submittedAt": "2025-04-05 21:02:10",
+      "guestName": "Marco Silva",
+      "listingName": "2B N1 A - 29 Shoreditch Heights"
+    },
+    {
+      "id": 8002,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 3,
+      "publicReview": "Comfortable stay but Wi-Fi dipped during a call.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 9 },
+        { "category": "communication", "rating": 8 },
+        { "category": "check_in", "rating": 9 },
+        { "category": "location", "rating": 9 },
+        { "category": "accuracy", "rating": 8 },
+        { "category": "value", "rating": 7 }
+      ],
+      "submittedAt": "2024-11-09 08:44:33",
+      "guestName": "Chris Johnson",
+      "listingName": "2B N1 A - 29 Shoreditch Heights"
+    },
+    {
+      "id": 8003,
+      "type": "host-to-guest",
+      "status": "published",
+      "rating": null,
+      "publicReview": "Alice was lovely and left the flat immaculate.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 10 },
+        { "category": "communication", "rating": 10 },
+        { "category": "respect_house_rules", "rating": 10 }
+      ],
+      "submittedAt": "2025-07-13 10:11:55",
+      "guestName": "Alice Nguyen",
+      "listingName": "2B N1 A - 29 Shoreditch Heights"
+    },
+
+    {
+      "id": 8004,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 5,
+      "publicReview": "Charming studio and super clean. Perfect for a weekend.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 10 },
+        { "category": "communication", "rating": 10 },
+        { "category": "check_in", "rating": 10 },
+        { "category": "location", "rating": 9 },
+        { "category": "accuracy", "rating": 9 },
+        { "category": "value", "rating": 9 }
+      ],
+      "submittedAt": "2025-08-22 17:40:09",
+      "guestName": "Sofia Martinez",
+      "listingName": "1A W2 C - Notting Hill Studio"
+    },
+    {
+      "id": 8005,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 4,
+      "publicReview": "Great location; coffee machine could use stronger pods.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 9 },
+        { "category": "communication", "rating": 9 },
+        { "category": "check_in", "rating": 9 },
+        { "category": "location", "rating": 10 },
+        { "category": "accuracy", "rating": 8 },
+        { "category": "value", "rating": 8 }
+      ],
+      "submittedAt": "2025-06-15 09:12:57",
+      "guestName": "Emma Brown",
+      "listingName": "1A W2 C - Notting Hill Studio"
+    },
+    {
+      "id": 8006,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 2,
+      "publicReview": "Entry code failed at first; resolved after 10 minutes.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 6 },
+        { "category": "check_in", "rating": 5 },
+        { "category": "location", "rating": 9 },
+        { "category": "accuracy", "rating": 7 },
+        { "category": "value", "rating": 6 }
+      ],
+      "submittedAt": "2024-10-01 20:31:41",
+      "guestName": "Liam O'Connor",
+      "listingName": "1A W2 C - Notting Hill Studio"
+    },
+    {
+      "id": 8007,
+      "type": "host-to-guest",
+      "status": "published",
+      "rating": null,
+      "publicReview": "Sofia followed all house rules and was a pleasure to host.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 10 },
+        { "category": "communication", "rating": 10 },
+        { "category": "respect_house_rules", "rating": 10 }
+      ],
+      "submittedAt": "2025-08-23 11:05:19",
+      "guestName": "Sofia Martinez",
+      "listingName": "1A W2 C - Notting Hill Studio"
+    },
+
+    {
+      "id": 8008,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 5,
+      "publicReview": "Stylish loft with great light; fast Wi-Fi for work.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 10 },
+        { "category": "communication", "rating": 10 },
+        { "category": "check_in", "rating": 10 },
+        { "category": "location", "rating": 9 },
+        { "category": "accuracy", "rating": 9 },
+        { "category": "value", "rating": 9 }
+      ],
+      "submittedAt": "2025-09-10 12:10:05",
+      "guestName": "Hannah Lee",
+      "listingName": "3C E1 B - Brick Lane Loft"
+    },
+    {
+      "id": 8009,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 4,
+      "publicReview": "Loved the decor; bedroom darker than photos.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 9 },
+        { "category": "communication", "rating": 9 },
+        { "category": "check_in", "rating": 9 },
+        { "category": "location", "rating": 8 },
+        { "category": "accuracy", "rating": 8 },
+        { "category": "value", "rating": 8 }
+      ],
+      "submittedAt": "2025-05-27 18:55:12",
+      "guestName": "Priya Patel",
+      "listingName": "3C E1 B - Brick Lane Loft"
+    },
+    {
+      "id": 8010,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 3,
+      "publicReview": "Good stay; shower pressure could be stronger.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 8 },
+        { "category": "check_in", "rating": 9 },
+        { "category": "location", "rating": 9 },
+        { "category": "accuracy", "rating": 8 },
+        { "category": "value", "rating": 7 }
+      ],
+      "submittedAt": "2024-12-11 19:44:02",
+      "guestName": "Daniel Kim",
+      "listingName": "3C E1 B - Brick Lane Loft"
+    },
+    {
+      "id": 8011,
+      "type": "host-to-guest",
+      "status": "published",
+      "rating": null,
+      "publicReview": "Hannah left the loft spotless and was communicative.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 10 },
+        { "category": "communication", "rating": 10 },
+        { "category": "respect_house_rules", "rating": 10 }
+      ],
+      "submittedAt": "2025-09-11 09:02:41",
+      "guestName": "Hannah Lee",
+      "listingName": "3C E1 B - Brick Lane Loft"
+    },
+
+    {
+      "id": 8012,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 4,
+      "publicReview": "Bright flat near the park. Bed a bit firm for me.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 9 },
+        { "category": "communication", "rating": 9 },
+        { "category": "check_in", "rating": 10 },
+        { "category": "location", "rating": 10 },
+        { "category": "accuracy", "rating": 9 },
+        { "category": "value", "rating": 8 }
+      ],
+      "submittedAt": "2025-06-30 16:12:09",
+      "guestName": "Daniel Kim",
+      "listingName": "4D NW1 D - Camden Garden Flat"
+    },
+    {
+      "id": 8013,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 5,
+      "publicReview": "Host went above and beyond with local tips—awesome stay!",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 10 },
+        { "category": "communication", "rating": 10 },
+        { "category": "check_in", "rating": 10 },
+        { "category": "location", "rating": 10 },
+        { "category": "accuracy", "rating": 9 },
+        { "category": "value", "rating": 9 }
+      ],
+      "submittedAt": "2025-03-18 10:44:33",
+      "guestName": "Yuki Tanaka",
+      "listingName": "4D NW1 D - Camden Garden Flat"
+    },
+    {
+      "id": 8014,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 3,
+      "publicReview": "Nice place; heating took a while to warm up.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 8 },
+        { "category": "check_in", "rating": 9 },
+        { "category": "location", "rating": 9 },
+        { "category": "accuracy", "rating": 8 },
+        { "category": "value", "rating": 7 }
+      ],
+      "submittedAt": "2024-09-22 14:21:44",
+      "guestName": "Grace Chen",
+      "listingName": "4D NW1 D - Camden Garden Flat"
+    },
+    {
+      "id": 8015,
+      "type": "host-to-guest",
+      "status": "published",
+      "rating": null,
+      "publicReview": "Yuki was respectful and easy to host. Welcome back!",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 10 },
+        { "category": "communication", "rating": 10 },
+        { "category": "respect_house_rules", "rating": 10 }
+      ],
+      "submittedAt": "2025-03-19 09:20:18",
+      "guestName": "Yuki Tanaka",
+      "listingName": "4D NW1 D - Camden Garden Flat"
+    },
+
+    {
+      "id": 8016,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 5,
+      "publicReview": "Views were fantastic; quiet at night and comfy bed.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 10 },
+        { "category": "communication", "rating": 9 },
+        { "category": "check_in", "rating": 10 },
+        { "category": "location", "rating": 10 },
+        { "category": "accuracy", "rating": 9 },
+        { "category": "value", "rating": 9 }
+      ],
+      "submittedAt": "2025-08-02 11:55:49",
+      "guestName": "Tom Becker",
+      "listingName": "5E SE1 A - South Bank View"
+    },
+    {
+      "id": 8017,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 4,
+      "publicReview": "Great Wi-Fi for calls; kitchen missing a baking tray.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 9 },
+        { "category": "communication", "rating": 9 },
+        { "category": "check_in", "rating": 9 },
+        { "category": "location", "rating": 9 },
+        { "category": "accuracy", "rating": 9 },
+        { "category": "value", "rating": 8 }
+      ],
+      "submittedAt": "2025-05-06 07:33:02",
+      "guestName": "Marta Kowalski",
+      "listingName": "5E SE1 A - South Bank View"
+    },
+    {
+      "id": 8018,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 2,
+      "publicReview": "Lift out for a day—host kept me updated promptly.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 7 },
+        { "category": "check_in", "rating": 8 },
+        { "category": "location", "rating": 9 },
+        { "category": "accuracy", "rating": 8 },
+        { "category": "value", "rating": 6 }
+      ],
+      "submittedAt": "2024-10-14 21:14:29",
+      "guestName": "Leo Martins",
+      "listingName": "5E SE1 A - South Bank View"
+    },
+    {
+      "id": 8019,
+      "type": "host-to-guest",
+      "status": "published",
+      "rating": null,
+      "publicReview": "Tom left the apartment tidy and communicated well.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 10 },
+        { "category": "communication", "rating": 10 },
+        { "category": "respect_house_rules", "rating": 10 }
+      ],
+      "submittedAt": "2025-08-03 09:01:13",
+      "guestName": "Tom Becker",
+      "listingName": "5E SE1 A - South Bank View"
+    },
+
+    {
+      "id": 8020,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 5,
+      "publicReview": "Peaceful mews home; check-in directions crystal clear.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 10 },
+        { "category": "communication", "rating": 10 },
+        { "category": "check_in", "rating": 10 },
+        { "category": "location", "rating": 9 },
+        { "category": "accuracy", "rating": 10 },
+        { "category": "value", "rating": 9 }
+      ],
+      "submittedAt": "2025-07-28 15:10:37",
+      "guestName": "Sara Lopez",
+      "listingName": "6F SW1 B - Westminster Mews"
+    },
+    {
+      "id": 8021,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 4,
+      "publicReview": "Very comfortable; some footsteps audible in the morning.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 9 },
+        { "category": "communication", "rating": 9 },
+        { "category": "check_in", "rating": 9 },
+        { "category": "location", "rating": 9 },
+        { "category": "accuracy", "rating": 9 },
+        { "category": "value", "rating": 8 }
+      ],
+      "submittedAt": "2025-03-02 19:18:11",
+      "guestName": "Jonah Park",
+      "listingName": "6F SW1 B - Westminster Mews"
+    },
+    {
+      "id": 8022,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 3,
+      "publicReview": "Good stay; thermostat took a moment to figure out.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 8 },
+        { "category": "check_in", "rating": 9 },
+        { "category": "location", "rating": 9 },
+        { "category": "accuracy", "rating": 8 },
+        { "category": "value", "rating": 7 }
+      ],
+      "submittedAt": "2024-12-20 13:44:59",
+      "guestName": "Chen Wei",
+      "listingName": "6F SW1 B - Westminster Mews"
+    },
+    {
+      "id": 8023,
+      "type": "host-to-guest",
+      "status": "published",
+      "rating": null,
+      "publicReview": "Sara respected all rules and left the mews spotless.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 10 },
+        { "category": "communication", "rating": 10 },
+        { "category": "respect_house_rules", "rating": 10 }
+      ],
+      "submittedAt": "2025-07-29 09:40:01",
+      "guestName": "Sara Lopez",
+      "listingName": "6F SW1 B - Westminster Mews"
+    },
+
+    {
+      "id": 8024,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 5,
+      "publicReview": "Sunny terrace and quiet street—loved it.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 10 },
+        { "category": "communication", "rating": 10 },
+        { "category": "check_in", "rating": 10 },
+        { "category": "location", "rating": 9 },
+        { "category": "accuracy", "rating": 9 },
+        { "category": "value", "rating": 9 }
+      ],
+      "submittedAt": "2025-09-03 08:05:42",
+      "guestName": "Nina Rossi",
+      "listingName": "7G E2 A - Bethnal Green Terrace"
+    },
+    {
+      "id": 8025,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 4,
+      "publicReview": "Great stay; bedroom gets warm in the afternoon sun.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 9 },
+        { "category": "communication", "rating": 9 },
+        { "category": "check_in", "rating": 9 },
+        { "category": "location", "rating": 9 },
+        { "category": "accuracy", "rating": 8 },
+        { "category": "value", "rating": 8 }
+      ],
+      "submittedAt": "2025-06-09 12:21:19",
+      "guestName": "Omar Faruk",
+      "listingName": "7G E2 A - Bethnal Green Terrace"
+    },
+    {
+      "id": 8026,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 2,
+      "publicReview": "Minor leak handled quickly; appreciate the updates.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 7 },
+        { "category": "check_in", "rating": 8 },
+        { "category": "location", "rating": 8 },
+        { "category": "accuracy", "rating": 8 },
+        { "category": "value", "rating": 6 }
+      ],
+      "submittedAt": "2024-11-28 07:40:15",
+      "guestName": "Helena Novak",
+      "listingName": "7G E2 A - Bethnal Green Terrace"
+    },
+    {
+      "id": 8027,
+      "type": "host-to-guest",
+      "status": "published",
+      "rating": null,
+      "publicReview": "Nina was friendly, tidy, and very respectful.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 10 },
+        { "category": "communication", "rating": 10 },
+        { "category": "respect_house_rules", "rating": 10 }
+      ],
+      "submittedAt": "2025-09-04 09:15:23",
+      "guestName": "Nina Rossi",
+      "listingName": "7G E2 A - Bethnal Green Terrace"
+    },
+
+    {
+      "id": 8028,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 5,
+      "publicReview": "Lovely courtyard; super convenient coffee spots nearby.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 10 },
+        { "category": "communication", "rating": 10 },
+        { "category": "check_in", "rating": 10 },
+        { "category": "location", "rating": 10 },
+        { "category": "accuracy", "rating": 9 },
+        { "category": "value", "rating": 9 }
+      ],
+      "submittedAt": "2025-08-18 10:32:44",
+      "guestName": "Rafael Gomez",
+      "listingName": "8H EC1 A - Clerkenwell Courtyard"
+    },
+    {
+      "id": 8029,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 4,
+      "publicReview": "Clean and comfy; pillows a bit soft for me.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 9 },
+        { "category": "communication", "rating": 9 },
+        { "category": "check_in", "rating": 9 },
+        { "category": "location", "rating": 9 },
+        { "category": "accuracy", "rating": 8 },
+        { "category": "value", "rating": 8 }
+      ],
+      "submittedAt": "2025-04-26 19:11:07",
+      "guestName": "Linda Park",
+      "listingName": "8H EC1 A - Clerkenwell Courtyard"
+    },
+    {
+      "id": 8030,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 3,
+      "publicReview": "Nice stay; washing machine manual would help.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 8 },
+        { "category": "check_in", "rating": 9 },
+        { "category": "location", "rating": 9 },
+        { "category": "accuracy", "rating": 8 },
+        { "category": "value", "rating": 7 }
+      ],
+      "submittedAt": "2024-12-05 09:48:26",
+      "guestName": "Victor Almeida",
+      "listingName": "8H EC1 A - Clerkenwell Courtyard"
+    },
+    {
+      "id": 8031,
+      "type": "host-to-guest",
+      "status": "published",
+      "rating": null,
+      "publicReview": "Rafael left the place spotless and communicated clearly.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 10 },
+        { "category": "communication", "rating": 10 },
+        { "category": "respect_house_rules", "rating": 10 }
+      ],
+      "submittedAt": "2025-08-19 08:57:03",
+      "guestName": "Rafael Gomez",
+      "listingName": "8H EC1 A - Clerkenwell Courtyard"
+    },
+
+    {
+      "id": 8032,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 5,
+      "publicReview": "Spacious townhouse; perfect for a family visit.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 10 },
+        { "category": "communication", "rating": 10 },
+        { "category": "check_in", "rating": 10 },
+        { "category": "location", "rating": 9 },
+        { "category": "accuracy", "rating": 9 },
+        { "category": "value", "rating": 9 }
+      ],
+      "submittedAt": "2025-07-07 14:03:32",
+      "guestName": "Caroline West",
+      "listingName": "9I N7 A - Islington Townhouse"
+    },
+    {
+      "id": 8033,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 4,
+      "publicReview": "Very nice; one bathroom light needed a new bulb.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 9 },
+        { "category": "communication", "rating": 9 },
+        { "category": "check_in", "rating": 9 },
+        { "category": "location", "rating": 9 },
+        { "category": "accuracy", "rating": 9 },
+        { "category": "value", "rating": 8 }
+      ],
+      "submittedAt": "2025-03-24 09:21:44",
+      "guestName": "Ahmed Hassan",
+      "listingName": "9I N7 A - Islington Townhouse"
+    },
+    {
+      "id": 8034,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 2,
+      "publicReview": "Heating issue first night; host fixed promptly next morning.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 7 },
+        { "category": "check_in", "rating": 8 },
+        { "category": "location", "rating": 8 },
+        { "category": "accuracy", "rating": 8 },
+        { "category": "value", "rating": 6 }
+      ],
+      "submittedAt": "2024-10-30 22:10:12",
+      "guestName": "Monica Reyes",
+      "listingName": "9I N7 A - Islington Townhouse"
+    },
+    {
+      "id": 8035,
+      "type": "host-to-guest",
+      "status": "published",
+      "rating": null,
+      "publicReview": "Caroline was considerate and left the home in great shape.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 10 },
+        { "category": "communication", "rating": 10 },
+        { "category": "respect_house_rules", "rating": 10 }
+      ],
+      "submittedAt": "2025-07-08 08:22:19",
+      "guestName": "Caroline West",
+      "listingName": "9I N7 A - Islington Townhouse"
+    },
+
+    {
+      "id": 8036,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 5,
+      "publicReview": "Epic warehouse vibes; surprisingly quiet at night.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 10 },
+        { "category": "communication", "rating": 10 },
+        { "category": "check_in", "rating": 10 },
+        { "category": "location", "rating": 9 },
+        { "category": "accuracy", "rating": 9 },
+        { "category": "value", "rating": 9 }
+      ],
+      "submittedAt": "2025-08-25 18:12:51",
+      "guestName": "Peter Young",
+      "listingName": "10J E3 B - Hackney Wick Warehouse"
+    },
+    {
+      "id": 8037,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 4,
+      "publicReview": "Great stay; more hooks in the bathroom would help.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 9 },
+        { "category": "communication", "rating": 9 },
+        { "category": "check_in", "rating": 9 },
+        { "category": "location", "rating": 9 },
+        { "category": "accuracy", "rating": 9 },
+        { "category": "value", "rating": 8 }
+      ],
+      "submittedAt": "2025-05-12 11:44:36",
+      "guestName": "Julia Steiner",
+      "listingName": "10J E3 B - Hackney Wick Warehouse"
+    },
+    {
+      "id": 8038,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 3,
+      "publicReview": "Cool space; curtains let in early light.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 8 },
+        { "category": "check_in", "rating": 9 },
+        { "category": "location", "rating": 9 },
+        { "category": "accuracy", "rating": 8 },
+        { "category": "value", "rating": 7 }
+      ],
+      "submittedAt": "2024-12-17 07:31:55",
+      "guestName": "Santiago Perez",
+      "listingName": "10J E3 B - Hackney Wick Warehouse"
+    },
+    {
+      "id": 8039,
+      "type": "host-to-guest",
+      "status": "published",
+      "rating": null,
+      "publicReview": "Peter was communicative and left the loft tidy.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 10 },
+        { "category": "communication", "rating": 10 },
+        { "category": "respect_house_rules", "rating": 10 }
+      ],
+      "submittedAt": "2025-08-26 09:33:28",
+      "guestName": "Peter Young",
+      "listingName": "10J E3 B - Hackney Wick Warehouse"
+    }
+  ]
+}
