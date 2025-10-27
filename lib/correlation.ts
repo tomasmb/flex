@@ -32,6 +32,9 @@ import type {
   MetricSeverity,
 } from './schemas';
 
+// Re-export types for convenience
+export type { PropertyHealthQuadrant, PropertyHealth, MetricSeverity } from './schemas';
+
 /**
  * Evaluate property rating severity independently
  */
