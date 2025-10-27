@@ -18,6 +18,7 @@ model Property {
   images      String?  // JSON string
   amenities   String?  // JSON string
   address     String?
+  city        String?  // City for grouping (e.g. "London", "Manchester")
 
   // Bidirectional reviews
   reviews     Review[]

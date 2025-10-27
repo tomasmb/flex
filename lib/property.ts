@@ -35,12 +35,31 @@ export async function findOrCreateProperty(listingName: string): Promise<string>
     const locationMatch = listingName.match(/- (.+)$/);
     const location = locationMatch ? locationMatch[1] : 'London';
 
+    // Map to one of the available cities: London, Paris, Algiers, Lisbon
+    const availableCities = ['London', 'Paris', 'Algiers', 'Lisbon'];
+    let city = 'London'; // Default
+
+    // Check if location contains any of the city names
+    for (const availableCity of availableCities) {
+      if (location.toLowerCase().includes(availableCity.toLowerCase())) {
+        city = availableCity;
+        break;
+      }
+    }
+
+    // If no match, assign based on hash for consistent distribution
+    if (city === 'London' && !location.toLowerCase().includes('london')) {
+      const hash = listingName.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+      city = availableCities[hash % availableCities.length];
+    }
+
     property = await db.property.create({
       data: {
         name: listingName,
         slug,
         description: `Beautiful property in ${location}`,
         address: location,
+        city,
       },
     });
   }

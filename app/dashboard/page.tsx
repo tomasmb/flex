@@ -1,145 +1,88 @@
 /**
- * Manager Dashboard Page
- * Server Component with direct database access
- * Based on architecture@1.0.0#frontend-composition.dashboard.v1
- * Updated with bidirectional analytics per dashboard-metrics@2.0.0
+ * Portfolio Overview Dashboard - Level 1
+ * Shows portfolio-wide KPIs and city breakdown
+ * Following Next.js best practices: Server Component with direct DB access
  */
 
 import { db } from '@/lib/db';
-import { KPISection } from '@/components/server/KPISection';
-import { BidirectionalKPIs } from '@/components/server/BidirectionalKPIs';
-import { ReviewTable } from '@/components/client/ReviewTable';
-import { FiltersBar } from '@/components/client/FiltersBar';
-import { AIInsightsPanel } from '@/components/server/AIInsightsPanel';
-import { PropertyHealthWidget } from '@/components/client/PropertyHealthWidget';
-import { RatingCharts } from '@/components/client/RatingChartsReviews';
-import {
-  calculateBidirectionalMetrics,
-  calculatePropertyHealthQuadrants,
-  calculateTimeSeriesData,
-  calculateDistribution,
-} from '@/lib/dashboard-analytics';
+import { calculateCityMetrics, calculatePortfolioKPIs } from '@/lib/city-analytics';
 import Link from 'next/link';
+import {
+  Building2,
+  Star,
+  TrendingUp,
+  AlertCircle,
+  ChevronRight,
+  MapPin,
+} from 'lucide-react';
 
-interface SearchParams {
-  rating?: string;
-  property?: string;
-  approved?: string;
-  search?: string;
-  direction?: string;
-  channel?: string;
-  dateFrom?: string;
-  dateTo?: string;
-}
-
-export default async function DashboardPage({
-  searchParams,
-}: {
-  searchParams: Promise<SearchParams>;
-}) {
-  const params = await searchParams;
-
-  // Build where clause from filters (including NEW bidirectional filters)
-  const where: any = {};
-
-  if (params.rating) {
-    where.rating = { gte: parseFloat(params.rating) };
-  }
-
-  if (params.property && params.property !== 'all') {
-    where.property = { name: params.property };
-  }
-
-  if (params.approved === 'approved') {
-    where.isPublished = true;
-  } else if (params.approved === 'unapproved') {
-    where.isPublished = false;
-  }
-
-  // NEW: Direction filter (CRITICAL for bidirectional analytics)
-  if (params.direction && params.direction !== 'all') {
-    where.direction = params.direction;
-  }
-
-  // NEW: Channel filter (CRITICAL for assessment)
-  if (params.channel && params.channel !== 'all') {
-    where.channel = params.channel;
-  }
-
-  // NEW: Date range filters (CRITICAL for assessment)
-  if (params.dateFrom || params.dateTo) {
-    where.date = {};
-    if (params.dateFrom) {
-      where.date.gte = new Date(params.dateFrom);
-    }
-    if (params.dateTo) {
-      where.date.lte = new Date(params.dateTo);
-    }
-  }
-
-  if (params.search) {
-    where.OR = [
-      { text: { contains: params.search } },
-      { guestName: { contains: params.search } },
-      { listingName: { contains: params.search } },
-    ];
-  }
-
-  // Fetch reviews with filters
-  const reviews = await db.review.findMany({
-    where,
-    include: { property: true },
-    orderBy: { date: 'desc' },
-  });
-
-  // Fetch ALL properties with reviews for health quadrant calculation
-  const allProperties = await db.property.findMany({
+export default async function PortfolioOverviewPage() {
+  // Fetch all properties with their reviews
+  const properties = await db.property.findMany({
     include: {
       reviews: true,
     },
   });
 
-  // Fetch property names for filter dropdown
-  const properties = await db.property.findMany({
-    select: { name: true },
-    orderBy: { name: 'asc' },
-  });
+  // Calculate portfolio-wide KPIs
+  const portfolioKPIs = calculatePortfolioKPIs(properties);
 
-  // Calculate bidirectional metrics
-  const bidirectionalMetrics = calculateBidirectionalMetrics(reviews);
+  // Calculate city-level metrics
+  const cityMetrics = calculateCityMetrics(properties);
 
-  // Calculate property health quadrants
-  const healthQuadrants = calculatePropertyHealthQuadrants(allProperties);
+  // Get health status colors
+  const getHealthColor = (status: string) => {
+    switch (status) {
+      case 'excellent':
+        return 'border-green-200 bg-green-50';
+      case 'good':
+        return 'border-blue-200 bg-blue-50';
+      case 'warning':
+        return 'border-yellow-200 bg-yellow-50';
+      case 'critical':
+        return 'border-red-200 bg-red-50';
+      default:
+        return 'border-gray-200 bg-gray-50';
+    }
+  };
 
-  // Calculate time-series data (last 6 months)
-  const timeSeriesData = calculateTimeSeriesData(reviews, 6);
-
-  // Calculate rating distribution
-  const distributionData = calculateDistribution(reviews);
+  const getHealthIcon = (status: string) => {
+    switch (status) {
+      case 'excellent':
+      case 'good':
+        return <TrendingUp className="w-5 h-5 text-green-600" />;
+      case 'warning':
+        return <AlertCircle className="w-5 h-5 text-yellow-600" />;
+      case 'critical':
+        return <AlertCircle className="w-5 h-5 text-red-600" />;
+      default:
+        return null;
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <header className="bg-white border-b border-border-gray">
+      <header className="bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 lg:px-8 py-6">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-3xl font-bold text-primary">Reviews Dashboard</h1>
-              <p className="text-text-muted mt-1">
-                Manage property reviews and analytics
+              <h1 className="text-3xl font-bold text-gray-900">Portfolio Overview</h1>
+              <p className="text-gray-600 mt-1">
+                Manage your property portfolio across all cities
               </p>
             </div>
             <div className="flex gap-3">
               <Link
                 href="/"
-                className="px-4 py-2 text-text-secondary hover:bg-gray-100 rounded-lg transition-colors"
+                className="px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
               >
                 Home
               </Link>
               <Link
                 href="/api/reviews/hostaway"
                 target="_blank"
-                className="px-4 py-2 bg-primary-light text-primary rounded-lg hover:bg-primary/10 transition-colors"
+                className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
               >
                 View API
               </Link>
@@ -150,38 +93,128 @@ export default async function DashboardPage({
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 lg:px-8 py-8 space-y-8">
-        {/* Property Health Widget (NEW - Top Priority) */}
-        <PropertyHealthWidget quadrants={healthQuadrants} />
-
-        {/* Bidirectional KPIs (NEW - CRITICAL) */}
-        <BidirectionalKPIs metrics={bidirectionalMetrics} />
-
-        {/* Charts Section (NEW - Visualizations) */}
-        <RatingCharts timeSeriesData={timeSeriesData} distributionData={distributionData} />
-
-        {/* Legacy KPI Section (Keep for backward compatibility) */}
-        <div className="bg-white rounded-2xl p-6 shadow-card">
-          <h2 className="text-xl font-semibold text-text-primary mb-4">Quick Stats</h2>
-          <KPISection reviews={reviews} />
-        </div>
-
-        {/* AI Insights Panel */}
-        <AIInsightsPanel reviews={reviews} />
-
-        {/* Filters */}
-        <FiltersBar properties={properties.map((p) => p.name)} />
-
-        {/* Reviews Table */}
-        <div className="bg-white rounded-2xl shadow-card p-6">
-          <div className="mb-4 flex items-center justify-between">
-            <h2 className="text-xl font-semibold text-text-primary">
-              All Reviews ({reviews.length})
-            </h2>
-            <p className="text-sm text-text-muted">
-              {reviews.filter((r) => r.approvedForWebsite).length} approved
+        {/* Portfolio KPIs */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="bg-white rounded-xl p-6 border border-gray-200">
+            <div className="flex items-center justify-between mb-2">
+              <h3 className="text-sm font-medium text-gray-600 uppercase tracking-wide">
+                Total Properties
+              </h3>
+              <Building2 className="w-5 h-5 text-gray-400" />
+            </div>
+            <p className="text-3xl font-bold text-gray-900">
+              {portfolioKPIs.totalProperties}
+            </p>
+            <p className="text-sm text-gray-500 mt-1">
+              Across {cityMetrics.length} cities
             </p>
           </div>
-          <ReviewTable reviews={reviews} />
+
+          <div className="bg-white rounded-xl p-6 border border-gray-200">
+            <div className="flex items-center justify-between mb-2">
+              <h3 className="text-sm font-medium text-gray-600 uppercase tracking-wide">
+                Average Rating
+              </h3>
+              <Star className="w-5 h-5 text-gray-400" />
+            </div>
+            <p className="text-3xl font-bold text-gray-900">
+              {portfolioKPIs.averageRating.toFixed(1)}
+            </p>
+            <p className="text-sm text-gray-500 mt-1">
+              {portfolioKPIs.totalReviews} total reviews
+            </p>
+          </div>
+
+          <div className="bg-white rounded-xl p-6 border border-gray-200">
+            <div className="flex items-center justify-between mb-2">
+              <h3 className="text-sm font-medium text-gray-600 uppercase tracking-wide">
+                Approved Reviews
+              </h3>
+              <Star className="w-5 h-5 text-gray-400" />
+            </div>
+            <p className="text-3xl font-bold text-gray-900">
+              {portfolioKPIs.approvedCount}
+            </p>
+            <p className="text-sm text-gray-500 mt-1">
+              Published on website
+            </p>
+          </div>
+
+          <div className="bg-white rounded-xl p-6 border border-gray-200">
+            <div className="flex items-center justify-between mb-2">
+              <h3 className="text-sm font-medium text-gray-600 uppercase tracking-wide">
+                Properties At Risk
+              </h3>
+              <AlertCircle className="w-5 h-5 text-gray-400" />
+            </div>
+            <p className="text-3xl font-bold text-gray-900">
+              {portfolioKPIs.propertiesAtRisk}
+            </p>
+            <p className="text-sm text-gray-500 mt-1">
+              Rating &lt; 4.0 (30 days)
+            </p>
+          </div>
+        </div>
+
+        {/* City Breakdown */}
+        <div className="bg-white rounded-xl p-6 border border-gray-200">
+          <div className="mb-6">
+            <h2 className="text-2xl font-bold text-gray-900">Cities</h2>
+            <p className="text-gray-600 mt-1">
+              Click on a city to view property-level details
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {cityMetrics.map((city) => (
+              <Link
+                key={city.citySlug}
+                href={`/dashboard/city/${city.citySlug}`}
+                className={`block border-2 rounded-xl p-6 hover:shadow-md transition-all ${getHealthColor(city.healthStatus)}`}
+              >
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-lg bg-white border border-gray-200 flex items-center justify-center">
+                      <MapPin className="w-6 h-6 text-gray-700" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-gray-900">
+                        {city.cityName}
+                      </h3>
+                      <p className="text-sm text-gray-600">
+                        {city.propertyCount} {city.propertyCount === 1 ? 'property' : 'properties'}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    {getHealthIcon(city.healthStatus)}
+                    <ChevronRight className="w-5 h-5 text-gray-400" />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-3 gap-4">
+                  <div>
+                    <p className="text-sm text-gray-600 mb-1">Avg Rating</p>
+                    <p className="text-lg font-bold text-gray-900">
+                      {city.averageRating.toFixed(1)}
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-600 mb-1">Reviews</p>
+                    <p className="text-lg font-bold text-gray-900">
+                      {city.totalReviews}
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-600 mb-1">Approval</p>
+                    <p className="text-lg font-bold text-gray-900">
+                      {city.approvalRate.toFixed(0)}%
+                    </p>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </main>
     </div>

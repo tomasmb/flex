@@ -32,7 +32,7 @@ export async function approveReview(reviewId: string, approved: boolean) {
     // Update database
     await db.review.update({
       where: { id: validated.reviewId },
-      data: { approvedForWebsite: validated.approved },
+      data: { isPublished: validated.approved },
     });
 
     // Revalidate dashboard and property pages
@@ -60,7 +60,7 @@ export async function bulkApproveReviews(reviewIds: string[], approved: boolean)
     // Update all reviews
     await db.review.updateMany({
       where: { id: { in: validated.reviewIds } },
-      data: { approvedForWebsite: validated.approved },
+      data: { isPublished: validated.approved },
     });
 
     // Revalidate pages
@@ -84,10 +84,10 @@ export async function autoApproveHighRatedReviews() {
   try {
     const result = await db.review.updateMany({
       where: {
-        overallRating: { gte: 5 },
-        approvedForWebsite: false,
+        rating: { gte: 5 },
+        isPublished: false,
       },
-      data: { approvedForWebsite: true },
+      data: { isPublished: true },
     });
 
     revalidatePath('/dashboard');
