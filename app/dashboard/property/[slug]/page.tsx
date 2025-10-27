@@ -19,6 +19,7 @@ import {
 import { ApprovalToggle } from '@/components/client/ApprovalToggle';
 import { format } from 'date-fns';
 import { generateReviewRecommendations } from '@/lib/review-recommendations';
+import { generatePropertyInsights } from '@/lib/property-insights';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -105,6 +106,16 @@ export default async function PropertyDeepDivePage({ params }: PageProps) {
 
   // Filter high priority recommendations
   const highPriorityRecs = recommendations.filter((r) => r.priority === 'high');
+
+  // Generate property insights
+  const insights = generatePropertyInsights(
+    guestToHostReviews.map((r) => ({
+      id: r.id,
+      rating: r.rating,
+      text: r.text,
+      categories: r.categories,
+    }))
+  );
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -208,6 +219,93 @@ export default async function PropertyDeepDivePage({ params }: PageProps) {
             </p>
           </div>
         </div>
+
+        {/* Property Insights */}
+        {guestToHostReviews.length > 0 && (
+          <div className="bg-white rounded-xl p-6 border border-gray-200">
+            <div className="mb-6">
+              <h2 className="text-2xl font-bold text-gray-900">Insights</h2>
+              <p className="text-gray-600 mt-1">{insights.summary}</p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {/* Themes */}
+              {insights.topThemes.length > 0 && (
+                <div className="space-y-4">
+                  <h3 className="text-sm font-medium text-gray-600 uppercase tracking-wide">
+                    Common Themes
+                  </h3>
+                  <div className="space-y-3">
+                    {insights.topThemes.map((theme, index) => (
+                      <div
+                        key={index}
+                        className="flex items-center justify-between py-2 px-3 bg-gray-50 rounded-lg"
+                      >
+                        <span
+                          className={`font-medium ${
+                            theme.sentiment === 'positive'
+                              ? 'text-green-700'
+                              : theme.sentiment === 'negative'
+                                ? 'text-red-700'
+                                : 'text-gray-700'
+                          }`}
+                        >
+                          {theme.theme}
+                        </span>
+                        <span className="text-sm text-gray-500">
+                          {theme.count}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Category Performance */}
+              {insights.categoryScores.length > 0 && (
+                <div className="space-y-4">
+                  <h3 className="text-sm font-medium text-gray-600 uppercase tracking-wide">
+                    Category Performance
+                  </h3>
+                  <div className="space-y-3">
+                    {insights.categoryScores.slice(0, 6).map((cat, index) => (
+                      <div key={index} className="space-y-2">
+                        <div className="flex items-center justify-between">
+                          <span className="text-sm font-medium text-gray-700 capitalize">
+                            {cat.category}
+                          </span>
+                          <span
+                            className={`text-sm font-bold ${
+                              cat.avgScore >= 9
+                                ? 'text-green-700'
+                                : cat.avgScore >= 7
+                                  ? 'text-yellow-700'
+                                  : 'text-red-700'
+                            }`}
+                          >
+                            {cat.avgScore.toFixed(1)}
+                          </span>
+                        </div>
+                        <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
+                          <div
+                            className={`h-full rounded-full transition-all ${
+                              cat.avgScore >= 9
+                                ? 'bg-green-500'
+                                : cat.avgScore >= 7
+                                  ? 'bg-yellow-500'
+                                  : 'bg-red-500'
+                            }`}
+                            style={{ width: `${(cat.avgScore / 10) * 100}%` }}
+                          />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
 
         {/* Guest-to-Host Reviews (Property Reviews) */}
         <div className="bg-white rounded-xl p-6 border border-gray-200">
