@@ -88,7 +88,7 @@ describe('/api/reviews/hostaway', () => {
     const response = await GET();
     const data = await response.json();
 
-    // Mock data has 40 reviews
-    expect(data.length).toBe(40);
+    // Mock data has 44 reviews
+    expect(data.length).toBe(44);
   });
 });
