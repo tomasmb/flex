@@ -6,6 +6,7 @@
 
 import { db } from '@/lib/db';
 import { notFound } from 'next/navigation';
+import { calculatePropertyHealth } from '@/lib/correlation';
 import Link from 'next/link';
 import {
   Building2,
@@ -74,17 +75,8 @@ export default async function CityViewPage({ params }: PageProps) {
         ? (approvedCount / guestToHostReviews.length) * 100
         : 0;
 
-    // Determine health status
-    let healthStatus: 'excellent' | 'good' | 'warning' | 'critical' = 'excellent';
-    if (guestToHostAvg < 4.0) {
-      healthStatus = 'critical';
-    } else if (guestToHostAvg < 4.5) {
-      healthStatus = 'warning';
-    } else if (guestToHostAvg >= 4.8) {
-      healthStatus = 'excellent';
-    } else {
-      healthStatus = 'good';
-    }
+    // Determine health status using worst-case severity system
+    const propertyHealth = calculatePropertyHealth(guestToHostAvg, hostToGuestAvg);
 
     return {
       property,
@@ -95,7 +87,10 @@ export default async function CityViewPage({ params }: PageProps) {
       hostToGuestCount: hostToGuestReviews.length,
       approvedCount,
       approvalRate,
-      healthStatus,
+      healthStatus: propertyHealth.quadrant, // Legacy
+      worstCaseColor: propertyHealth.worstCase?.color, // NEW: For card color
+      propertySeverityLabel: propertyHealth.propertySeverity?.label, // NEW: For tooltip
+      guestSeverityLabel: propertyHealth.guestSeverity?.label, // NEW: For tooltip
     };
   });
 
@@ -108,32 +103,48 @@ export default async function CityViewPage({ params }: PageProps) {
       propertyMetrics.length,
   };
 
-  const getHealthColor = (status: string) => {
-    switch (status) {
-      case 'excellent':
+  const getSeverityColor = (severity: string) => {
+    switch (severity) {
+      case 'green':
         return 'border-green-200 bg-green-50';
-      case 'good':
-        return 'border-blue-200 bg-blue-50';
-      case 'warning':
+      case 'yellow':
         return 'border-yellow-200 bg-yellow-50';
-      case 'critical':
+      case 'orange':
+        return 'border-orange-200 bg-orange-50';
+      case 'red':
         return 'border-red-200 bg-red-50';
       default:
         return 'border-gray-200 bg-gray-50';
     }
   };
 
-  const getHealthIcon = (status: string) => {
-    switch (status) {
-      case 'excellent':
-      case 'good':
+  const getSeverityIcon = (color: string) => {
+    switch (color) {
+      case 'green':
         return <TrendingUp className="w-5 h-5 text-green-600" />;
-      case 'warning':
+      case 'yellow':
         return <AlertCircle className="w-5 h-5 text-yellow-600" />;
-      case 'critical':
+      case 'orange':
+        return <AlertCircle className="w-5 h-5 text-orange-600" />;
+      case 'red':
         return <AlertCircle className="w-5 h-5 text-red-600" />;
       default:
         return null;
+    }
+  };
+
+  const getSeverityBadge = (color: string) => {
+    switch (color) {
+      case 'green':
+        return { label: 'Excellent', color: 'text-green-700' };
+      case 'yellow':
+        return { label: 'Monitor', color: 'text-yellow-700' };
+      case 'orange':
+        return { label: 'Warning', color: 'text-orange-700' };
+      case 'red':
+        return { label: 'Urgent', color: 'text-red-700' };
+      default:
+        return { label: 'Unknown', color: 'text-gray-700' };
     }
   };
 
@@ -173,14 +184,22 @@ export default async function CityViewPage({ params }: PageProps) {
           </div>
 
           <div className="space-y-4">
-            {propertyMetrics.map(({ property, ...metrics }) => (
-              <Link
-                key={property.id}
-                href={`/dashboard/property/${property.slug}`}
-                className={`block border-2 rounded-xl p-6 hover:shadow-md transition-all ${getHealthColor(metrics.healthStatus)}`}
-              >
-                <div className="flex items-start justify-between mb-4">
-                  <div className="flex items-start gap-4 flex-1">
+            {propertyMetrics.map(({ property, ...metrics }) => {
+              // Use worst-case color for card
+              const cardColor = getSeverityColor(metrics.worstCaseColor || 'green');
+
+              // Build detailed tooltip showing both metrics independently
+              const tooltipText = `Property: ${metrics.guestToHostAvg.toFixed(1)}/5.0 (${metrics.propertySeverityLabel || 'Unknown'})\nGuests: ${metrics.hostToGuestAvg.toFixed(1)}/5.0 (${metrics.guestSeverityLabel || 'Unknown'})\n\nCard color shows worst-case scenario.`;
+
+              return (
+                <Link
+                  key={property.id}
+                  href={`/dashboard/property/${property.slug}`}
+                  className={`block border-2 rounded-xl p-6 hover:shadow-md transition-all ${cardColor}`}
+                  title={tooltipText}
+                >
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="flex items-start gap-4 flex-1">
                     <div className="w-12 h-12 rounded-lg bg-white border border-gray-200 flex items-center justify-center flex-shrink-0">
                       <Building2 className="w-6 h-6 text-gray-700" />
                     </div>
@@ -192,7 +211,7 @@ export default async function CityViewPage({ params }: PageProps) {
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
-                    {getHealthIcon(metrics.healthStatus)}
+                    {getSeverityIcon(metrics.worstCaseColor || 'green')}
                     <ChevronRight className="w-5 h-5 text-gray-400" />
                   </div>
                 </div>
@@ -253,7 +272,8 @@ export default async function CityViewPage({ params }: PageProps) {
                   </div>
                 </div>
               </Link>
-            ))}
+              );
+            })}
           </div>
         </div>
       </main>

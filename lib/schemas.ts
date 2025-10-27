@@ -125,11 +125,22 @@ export type PropertyHealthQuadrant =
   | 'well-managed'
   | 'screening-issue'
   | 'property-issue'
-  | 'systemic-failure';
+  | 'systemic-failure'
+  | 'needs-improvement';
+
+export interface MetricSeverity {
+  level: number; // 0=excellent, 1=warning, 2=critical
+  color: string; // 'green', 'yellow', 'orange', 'red'
+  label: string; // Human-readable status
+  description: string; // Full explanation for tooltips
+}
 
 export interface PropertyHealth {
   quadrant: PropertyHealthQuadrant;
   guestToHostRating: number;
   hostToGuestRating: number;
   recommendation: string;
+  propertySeverity?: MetricSeverity; // NEW: Independent property evaluation
+  guestSeverity?: MetricSeverity;    // NEW: Independent guest evaluation
+  worstCase?: MetricSeverity;        // NEW: Worst of the two (for card color)
 }

@@ -2,7 +2,26 @@
  * Correlation Analysis & Guest Risk Scoring
  * Implements bidirectional review analytics from spec Section 2B
  * Based on dashboard-metrics@2.0.0#kpis.correlation.v1
+ *
+ * Thresholds based on industry research (rating-thresholds-research@1.0.0):
+ * - Guest-to-Host: ≥4.7 (Excellent), 4.0-4.69 (Good), <4.0 (Poor)
+ * - Host-to-Guest: ≥4.5 (Excellent), <4.5 (Needs screening attention)
+ *
+ * Research sources: Airbnb Superhost (4.8 req), Booking.com (9.0+ = Excellent),
+ * Industry data (86% of properties ≥4.5, 96% ≥4.0)
  */
+
+// Research-backed thresholds (see rating-thresholds-research@1.0.0)
+const THRESHOLDS = {
+  guestToHost: {
+    excellent: 4.7,  // Approaching Airbnb Superhost standard (4.8)
+    poor: 4.0,       // Below this = bottom 4% of market
+  },
+  hostToGuest: {
+    excellent: 4.5,  // Quality guests, low risk
+    concerning: 4.0, // Below this requires intervention
+  },
+} as const;
 
 import type {
   BidirectionalMetrics,
@@ -10,31 +29,114 @@ import type {
   PropertyHealth,
   CategoryScores,
   GuestBehaviorScores,
+  MetricSeverity,
 } from './schemas';
 
 /**
- * Calculate property health quadrant based on guest-to-host and host-to-guest ratings
- * From spec lines 376-386
+ * Evaluate property rating severity independently
+ */
+function evaluatePropertySeverity(rating: number): MetricSeverity {
+  if (rating >= THRESHOLDS.guestToHost.excellent) {
+    return {
+      level: 0,
+      color: 'green',
+      label: 'Excellent',
+      description: `Property rating ${rating.toFixed(1)}/5.0 is at Superhost tier (≥4.7). Maintain standards.`,
+    };
+  }
+  if (rating >= THRESHOLDS.guestToHost.poor) {
+    return {
+      level: 1,
+      color: 'yellow',
+      label: 'Needs Improvement',
+      description: `Property rating ${rating.toFixed(1)}/5.0 is acceptable but below premium (4.0-4.69). Work toward ≥4.7.`,
+    };
+  }
+  return {
+    level: 2,
+    color: 'red',
+    label: 'Critical',
+    description: `Property rating ${rating.toFixed(1)}/5.0 is in bottom 4% of market (<4.0). URGENT: Fix immediately.`,
+  };
+}
+
+/**
+ * Evaluate guest quality severity independently
+ */
+function evaluateGuestSeverity(rating: number): MetricSeverity {
+  if (rating >= THRESHOLDS.hostToGuest.excellent) {
+    return {
+      level: 0,
+      color: 'green',
+      label: 'Excellent Guests',
+      description: `Guest quality ${rating.toFixed(1)}/5.0 is excellent (≥4.5). No screening issues.`,
+    };
+  }
+  if (rating >= THRESHOLDS.hostToGuest.concerning) {
+    return {
+      level: 1,
+      color: 'orange',
+      label: 'Screening Needed',
+      description: `Guest quality ${rating.toFixed(1)}/5.0 needs attention (4.0-4.49). Review acceptance criteria.`,
+    };
+  }
+  return {
+    level: 2,
+    color: 'red',
+    label: 'Critical Guests',
+    description: `Guest quality ${rating.toFixed(1)}/5.0 is critical (<4.0). URGENT: Tighten screening immediately.`,
+  };
+}
+
+/**
+ * Calculate property health using WORST-CASE independent flagging
+ * Each metric (property, guests) is evaluated independently
+ * The worse of the two determines the overall flag color
+ *
+ * Philosophy: Flag individual problems, don't let them slip because the other side is good
+ *
+ * Examples:
+ * - Property 3.8 (Red), Guests 4.8 (Green) → Red card
+ * - Property 4.5 (Yellow), Guests 4.2 (Orange) → Orange card
+ * - Property 4.8 (Green), Guests 4.2 (Orange) → Orange card
  */
 export function calculatePropertyHealth(
   guestToHostRating: number,
   hostToGuestRating: number
 ): PropertyHealth {
-  let quadrant: PropertyHealthQuadrant;
-  let recommendation: string;
+  // Evaluate each metric independently
+  const propertySeverity = evaluatePropertySeverity(guestToHostRating);
+  const guestSeverity = evaluateGuestSeverity(hostToGuestRating);
 
-  if (guestToHostRating >= 4.5 && hostToGuestRating >= 4.5) {
-    quadrant = 'well-managed';
-    recommendation = 'Maintain current standards. Property and guest quality are excellent.';
-  } else if (guestToHostRating >= 4.5 && hostToGuestRating < 4.0) {
-    quadrant = 'screening-issue';
-    recommendation = 'Review guest acceptance criteria. Property performs well but attracting lower-quality guests.';
-  } else if (guestToHostRating < 4.0 && hostToGuestRating >= 4.5) {
-    quadrant = 'property-issue';
-    recommendation = 'Fix property problems. Guests are well-behaved but property has issues.';
-  } else {
+  // Determine worst case (higher level = more severe)
+  const worstCase = propertySeverity.level >= guestSeverity.level
+    ? propertySeverity
+    : guestSeverity;
+
+  // Map to quadrant for backward compatibility
+  let quadrant: PropertyHealthQuadrant;
+  if (propertySeverity.level === 2 && guestSeverity.level === 2) {
     quadrant = 'systemic-failure';
-    recommendation = 'URGENT: Both property and guest quality need immediate attention.';
+  } else if (propertySeverity.level === 2) {
+    quadrant = 'property-issue';
+  } else if (guestSeverity.level >= 1 && propertySeverity.level === 0) {
+    quadrant = 'screening-issue';
+  } else if (propertySeverity.level === 1 || guestSeverity.level === 1) {
+    quadrant = 'needs-improvement';
+  } else {
+    quadrant = 'well-managed';
+  }
+
+  // Build recommendation based on individual issues
+  let recommendation = '';
+  if (propertySeverity.level >= 1 && guestSeverity.level >= 1) {
+    recommendation = `BOTH metrics need attention: ${propertySeverity.description} AND ${guestSeverity.description}`;
+  } else if (propertySeverity.level >= 1) {
+    recommendation = `Property needs attention: ${propertySeverity.description}`;
+  } else if (guestSeverity.level >= 1) {
+    recommendation = `Guests need attention: ${guestSeverity.description}`;
+  } else {
+    recommendation = 'Excellent performance on both property quality and guest screening. Maintain current standards.';
   }
 
   return {
@@ -42,6 +144,9 @@ export function calculatePropertyHealth(
     guestToHostRating,
     hostToGuestRating,
     recommendation,
+    propertySeverity, // NEW: expose individual severities
+    guestSeverity,    // NEW: expose individual severities
+    worstCase,        // NEW: expose worst case for UI
   };
 }
 

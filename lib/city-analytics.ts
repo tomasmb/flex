@@ -1,9 +1,11 @@
 /**
  * City-Level Analytics Functions
  * Calculate metrics aggregated by city for portfolio overview
+ * Updated with research-backed thresholds (rating-thresholds-research@1.0.0)
  */
 
 import { Property, Review } from '@prisma/client';
+import { calculatePropertyHealth, type PropertyHealthQuadrant } from './correlation';
 
 export interface CityMetrics {
   cityName: string;
@@ -12,9 +14,13 @@ export interface CityMetrics {
   totalReviews: number;
   averageRating: number;
   approvalRate: number;
-  healthStatus: 'excellent' | 'good' | 'warning' | 'critical';
+  healthStatus: PropertyHealthQuadrant; // Legacy: for backward compatibility
   guestToHostAvg: number;
   hostToGuestAvg: number;
+  worstCaseColor?: string; // NEW: Worst-case severity color ('green', 'yellow', 'orange', 'red')
+  propertySeverityLabel?: string; // NEW: Property severity label for tooltip
+  guestSeverityLabel?: string; // NEW: Guest severity label for tooltip
+  propertiesAtRisk: number; // NEW: Count of properties with low ratings in last 30 days
 }
 
 type PropertyWithReviews = Property & {
@@ -74,16 +80,46 @@ export function calculateCityMetrics(
         ? (approvedCount / guestToHostReviews.length) * 100
         : 0;
 
-    // Determine health status
-    let healthStatus: CityMetrics['healthStatus'] = 'excellent';
-    if (guestToHostAvg < 4.0 || hostToGuestAvg < 4.0) {
-      healthStatus = 'critical';
-    } else if (guestToHostAvg < 4.5 || hostToGuestAvg < 4.5) {
-      healthStatus = 'warning';
-    } else if (guestToHostAvg >= 4.8 && hostToGuestAvg >= 4.8) {
-      healthStatus = 'excellent';
-    } else {
-      healthStatus = 'good';
+    // Calculate properties at risk in this city (last 30 days)
+    const thirtyDaysAgo = new Date();
+    thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+
+    const propertiesAtRisk = cityProperties.filter((property) => {
+      const recentGuestToHost = property.reviews.filter(
+        (r) => r.direction === 'guest-to-host' && r.date >= thirtyDaysAgo
+      );
+      const recentHostToGuest = property.reviews.filter(
+        (r) => r.direction === 'host-to-guest' && r.date >= thirtyDaysAgo
+      );
+
+      let hasLowGuestToHost = false;
+      let hasLowHostToGuest = false;
+
+      if (recentGuestToHost.length > 0) {
+        const guestToHostAvg =
+          recentGuestToHost.reduce((sum, r) => sum + (r.rating || 0), 0) /
+          recentGuestToHost.length;
+        hasLowGuestToHost = guestToHostAvg < 4.0;
+      }
+
+      if (recentHostToGuest.length > 0) {
+        const hostToGuestAvg =
+          recentHostToGuest.reduce((sum, r) => sum + (r.rating || 0), 0) /
+          recentHostToGuest.length;
+        hasLowHostToGuest = hostToGuestAvg < 4.0;
+      }
+
+      return hasLowGuestToHost || hasLowHostToGuest;
+    }).length;
+
+    // Determine health status using worst-case severity system
+    const propertyHealth = calculatePropertyHealth(guestToHostAvg, hostToGuestAvg);
+
+    // Override worstCaseColor if there are properties at risk
+    // Cities with 1+ properties at risk should be flagged as red, regardless of average ratings
+    let worstCaseColor = propertyHealth.worstCase?.color;
+    if (propertiesAtRisk > 0) {
+      worstCaseColor = 'red';
     }
 
     cityMetrics.push({
@@ -93,9 +129,13 @@ export function calculateCityMetrics(
       totalReviews: allReviews.length,
       averageRating,
       approvalRate,
-      healthStatus,
+      healthStatus: propertyHealth.quadrant, // Legacy
       guestToHostAvg,
       hostToGuestAvg,
+      worstCaseColor, // NEW: Worst-case color for card (overridden if properties at risk)
+      propertySeverityLabel: propertyHealth.propertySeverity?.label, // NEW: For tooltip
+      guestSeverityLabel: propertyHealth.guestSeverity?.label, // NEW: For tooltip
+      propertiesAtRisk, // NEW: Properties at risk count
     });
   });
 
@@ -163,12 +203,12 @@ export function calculatePortfolioKPIs(properties: PropertyWithReviews[]) {
       hasLowGuestToHost = guestToHostAvg < 4.0;
     }
 
-    // Check host-to-guest ratings (10-point scale)
+    // Check host-to-guest ratings (5-point scale, normalized)
     if (recentHostToGuest.length > 0) {
       const hostToGuestAvg =
         recentHostToGuest.reduce((sum, r) => sum + (r.rating || 0), 0) /
         recentHostToGuest.length;
-      hasLowHostToGuest = hostToGuestAvg < 8.0;
+      hasLowHostToGuest = hostToGuestAvg < 4.0;
     }
 
     // Property is at risk if either rating is low

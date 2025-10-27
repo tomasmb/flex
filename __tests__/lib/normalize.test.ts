@@ -45,8 +45,9 @@ describe('normalizeHostawayReview', () => {
 
     const normalized = normalizeHostawayReview(raw);
 
-    // Should calculate from categories: (8 + 10) / 2 = 9
-    expect(normalized.overallRating).toBe(9);
+    // Should calculate from categories and convert to 5-point scale:
+    // (8 + 10) / 2 = 9 (10-point) → 9 / 2 = 4.5 (5-point)
+    expect(normalized.overallRating).toBe(4.5);
   });
 
   it('converts date format to ISO 8601', () => {

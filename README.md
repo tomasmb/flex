@@ -81,6 +81,21 @@ Visit http://localhost:3000 🎉
     └── lib/
 \`\`\`
 
+## 📚 Documentation
+
+Comprehensive design docs are available in the `docs/` directory:
+
+- **[`rating-thresholds-research.md`](docs/rating-thresholds-research.md)** — Research-backed property rating thresholds
+  - Industry benchmarks (Airbnb, Booking.com)
+  - Rationale for 4.7/4.5 thresholds
+  - ⚠️ **Rating scale system** (5-point overall, 10-point categories)
+  - Property health quadrant definitions
+- **[`10-dashboard-metrics.md`](docs/10-dashboard-metrics.md)** — Dashboard functional specification
+- **[`00-scope.md`](docs/00-scope.md)** — Product scope and requirements
+- **[`20-architecture.md`](docs/20-architecture.md)** — Technical architecture
+- **[`30-design-system.md`](docs/30-design-system.md)** — Design system and UI patterns
+- **[`google-reviews-findings.md`](docs/google-reviews-findings.md)** — Google Reviews integration research
+
 ## 🛠️ Tech Stack
 
 | Layer | Technology | Purpose |
@@ -356,6 +371,51 @@ export function generateAIInsights(reviews: Review[]): AIInsights {
 }
 \`\`\`
 
+## 🔧 Troubleshooting
+
+### Rating Scale Issues
+
+⚠️ **CRITICAL:** The system uses mixed rating scales:
+- **Overall ratings:** 5-point scale (0-5.0)
+- **Category ratings:** 10-point scale (0-10)
+
+If you see unusual threshold behavior or health statuses, you may need to reseed the database:
+
+\`\`\`bash
+# ⚠️ WARNING: This will delete all data in your database
+# Only run on development/local databases!
+npx prisma migrate reset --force
+
+# Then reseed with corrected data
+npm run db:seed
+\`\`\`
+
+**What this fixes:**
+- Converts 10-point category averages → 5-point overall ratings
+- Ensures thresholds (4.7, 4.5, 4.0) work correctly
+- Aligns with Airbnb/Booking.com standards
+
+**When to reseed:**
+- After pulling updates that change `lib/normalize.ts`
+- If property health status seems incorrect
+- After changing threshold logic in `lib/correlation.ts`
+
+### Database Reset Safety
+
+**Development Database (Safe):**
+- Local PostgreSQL/SQLite
+- Connection string contains `localhost` or local file path
+- **OK to reset** - only affects your local machine
+
+**Production Database (DANGEROUS):**
+- Remote database (Railway, Vercel Postgres, etc.)
+- Connection string contains remote host
+- **NEVER reset without explicit approval**
+
+**Current Database:** Check your `.env` file:
+- `DATABASE_URL="postgresql://localhost:5432/..."` → Safe (local)
+- `DATABASE_URL="postgresql://production.db:5432/..."` → Dangerous!
+
 ## 📞 Support
 
 For questions or issues:
@@ -370,4 +430,4 @@ This project was built as part of the Flex Living developer assessment.
 
 **Built with ❤️ by Tomas for Flex Living**
 
-*Last updated: October 26, 2025*
+*Last updated: October 27, 2025*

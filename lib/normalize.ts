@@ -8,11 +8,19 @@ import type { NormalizedReview, RawHostawayReview, CategoryRating } from './sche
 
 /**
  * Calculate average rating from category breakdowns
+ * Categories are on 10-point scale, but we convert to 5-point for consistency
+ * @param categories - Array of category ratings (0-10 scale)
+ * @returns Average rating on 5-point scale (0-5)
  */
 function calculateAverageFromCategories(categories: CategoryRating[]): number {
   if (categories.length === 0) return 0;
   const sum = categories.reduce((acc, c) => acc + c.rating, 0);
-  return Math.round((sum / categories.length) * 10) / 10; // Round to 1 decimal
+  const average10Point = sum / categories.length;
+
+  // Convert from 10-point scale to 5-point scale
+  const average5Point = average10Point / 2;
+
+  return Math.round(average5Point * 10) / 10; // Round to 1 decimal
 }
 
 /**

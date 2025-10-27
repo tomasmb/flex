@@ -4,11 +4,12 @@ role: "source-of-truth"
 version: "2.0.0"
 status: "stable"
 owner: "tomas@theflex.global"
-last_updated: "2025-10-26"
+last_updated: "2025-10-27"
 doc_id: "dashboard-metrics@2.0.0"
 depends_on:
   - "scope@1.0.0"
   - "architecture@1.0.0"
+  - "rating-thresholds-research@1.0.0"
 provides:
   - "requirements.dashboard"
   - "features.kpis.guest-to-host"
@@ -375,16 +376,42 @@ interface GuestRiskScore {
 
 ### Property vs Guest Quality Matrix <!-- id:kpis.matrix.v1 -->
 
-**MUST** categorize each property into quadrants:
+**MUST** categorize each property into quadrants using **priority-based logic**:
 
-| Guest-to-Host Rating | Host-to-Guest Rating | Interpretation | Action |
-|---------------------|---------------------|----------------|--------|
-| High (>4.5) | High (>4.5) | ✅ **Well-managed** | Maintain standards |
-| High (>4.5) | Low (<4.0) | ⚠️ **Screening issue** | Review acceptance criteria |
-| Low (<4.0) | High (>4.5) | ⚠️ **Property issue** | Fix property problems |
-| Low (<4.0) | Low (<4.0) | 🚨 **Systemic failure** | Urgent intervention |
+**Thresholds (research-backed, see `rating-thresholds-research@1.0.0`):**
+- Property "Excellent": ≥4.7 (Airbnb Superhost-approaching, 86th+ percentile)
+- Property "Critical": <4.0 (Bottom 4% of market - **ALWAYS urgent**)
+- Guests "Excellent": ≥4.5 (Quality guests, low risk)
 
-**Purpose:** Quick diagnostic for property health
+**Worst-Case Flagging Logic:**
+
+Each metric is evaluated independently, card color = worst of the two:
+
+**Property Severity Scale:**
+- ≥4.7 → 🟢 Green (Excellent)
+- 4.0-4.69 → 🟡 Yellow (Monitor)
+- <4.0 → 🔴 Red (Critical)
+
+**Guest Severity Scale:**
+- ≥4.5 → 🟢 Green (Excellent)
+- 4.0-4.49 → 🟠 Orange (Screening needed)
+- <4.0 → 🔴 Red (Critical)
+
+**Card Color Examples:**
+- Property 3.8 (🔴), Guests 4.8 (🟢) → **Card is RED**
+- Property 4.5 (🟡), Guests 4.2 (🟠) → **Card is ORANGE**
+- Property 4.8 (🟢), Guests 4.8 (🟢) → **Card is GREEN**
+
+| Card Color | Meaning | What to Check (hover tooltip shows details) |
+|------------|---------|----------------------------------------------|
+| 🔴 **Red** | URGENT | Property &lt;4.0 OR guests &lt;4.0 → Fix immediately |
+| 🟠 **Orange** | Warning | Guests 4.0-4.49 → Tighten screening |
+| 🟡 **Yellow** | Monitor | Property 4.0-4.69 → Work toward ≥4.7 |
+| 🟢 **Green** | Excellent | Both property ≥4.7 AND guests ≥4.5 |
+
+**Key Principle:** Flag individual problems independently. Don't let a <4.0 property (bottom 4%) slip through just because guests are good.
+
+**Purpose:** Worst-case triage ensures critical issues are always visible
 
 ### Problem Guest Pattern Detection <!-- id:kpis.problem-patterns.v1 -->
 

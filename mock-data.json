@@ -44,24 +44,24 @@
       "id": 8001,
       "type": "guest-to-host",
       "status": "published",
-      "rating": 4,
-      "publicReview": "Great place overall; a little street noise at night.",
+      "rating": 5,
+      "publicReview": "Great place overall; a little street noise at night but still excellent.",
       "reviewCategory": [
         {
           "category": "cleanliness",
-          "rating": 9
+          "rating": 10
         },
         {
           "category": "communication",
-          "rating": 9
+          "rating": 10
         },
         {
           "category": "check_in",
-          "rating": 9
+          "rating": 10
         },
         {
           "category": "location",
-          "rating": 8
+          "rating": 9
         },
         {
           "category": "accuracy",
@@ -69,7 +69,7 @@
         },
         {
           "category": "value",
-          "rating": 8
+          "rating": 9
         }
       ],
       "submittedAt": "2025-10-24 21:02:00",
@@ -83,7 +83,7 @@
       "id": 8002,
       "type": "guest-to-host",
       "status": "published",
-      "rating": 3,
+      "rating": 4,
       "publicReview": "Comfortable stay but Wi-Fi dipped during a call.",
       "reviewCategory": [
         {
@@ -92,7 +92,7 @@
         },
         {
           "category": "communication",
-          "rating": 8
+          "rating": 9
         },
         {
           "category": "check_in",
@@ -108,7 +108,7 @@
         },
         {
           "category": "value",
-          "rating": 7
+          "rating": 8
         }
       ],
       "submittedAt": "2025-10-23 08:44:00",
@@ -236,12 +236,12 @@
       "id": 8006,
       "type": "guest-to-host",
       "status": "published",
-      "rating": 2,
-      "publicReview": "Entry code failed at first; resolved after 10 minutes.",
+      "rating": 3,
+      "publicReview": "Entry code failed multiple times and amenities not as described. Very frustrating experience.",
       "reviewCategory": [
         {
           "category": "cleanliness",
-          "rating": 8
+          "rating": 7
         },
         {
           "category": "communication",
@@ -253,11 +253,11 @@
         },
         {
           "category": "location",
-          "rating": 9
+          "rating": 8
         },
         {
           "category": "accuracy",
-          "rating": 7
+          "rating": 6
         },
         {
           "category": "value",
@@ -389,7 +389,7 @@
       "id": 8010,
       "type": "guest-to-host",
       "status": "published",
-      "rating": 3,
+      "rating": 4,
       "publicReview": "Good stay; shower pressure could be stronger.",
       "reviewCategory": [
         {
@@ -398,7 +398,7 @@
         },
         {
           "category": "communication",
-          "rating": 8
+          "rating": 9
         },
         {
           "category": "check_in",
@@ -414,7 +414,7 @@
         },
         {
           "category": "value",
-          "rating": 7
+          "rating": 8
         }
       ],
       "submittedAt": "2025-10-22 19:44:00",
@@ -542,12 +542,12 @@
       "id": 8014,
       "type": "guest-to-host",
       "status": "published",
-      "rating": 3,
+      "rating": 4,
       "publicReview": "Nice place; heating took a while to warm up.",
       "reviewCategory": [
         {
           "category": "cleanliness",
-          "rating": 8
+          "rating": 9
         },
         {
           "category": "communication",
@@ -567,7 +567,7 @@
         },
         {
           "category": "value",
-          "rating": 7
+          "rating": 8
         }
       ],
       "submittedAt": "2025-10-20 14:21:00",
@@ -695,16 +695,16 @@
       "id": 8018,
       "type": "guest-to-host",
       "status": "published",
-      "rating": 2,
-      "publicReview": "Lift out for a day—host kept me updated promptly.",
+      "rating": 4,
+      "publicReview": "Lift out for a day—host kept me updated promptly. Still a good stay.",
       "reviewCategory": [
         {
           "category": "cleanliness",
-          "rating": 8
+          "rating": 9
         },
         {
           "category": "communication",
-          "rating": 7
+          "rating": 9
         },
         {
           "category": "check_in",
@@ -720,7 +720,7 @@
         },
         {
           "category": "value",
-          "rating": 6
+          "rating": 8
         }
       ],
       "submittedAt": "2025-10-21 21:14:00",
@@ -848,12 +848,12 @@
       "id": 8022,
       "type": "guest-to-host",
       "status": "published",
-      "rating": 3,
+      "rating": 4,
       "publicReview": "Good stay; thermostat took a moment to figure out.",
       "reviewCategory": [
         {
           "category": "cleanliness",
-          "rating": 8
+          "rating": 9
         },
         {
           "category": "communication",
@@ -873,7 +873,7 @@
         },
         {
           "category": "value",
-          "rating": 7
+          "rating": 8
         }
       ],
       "submittedAt": "2025-10-20 13:44:00",
@@ -1001,16 +1001,16 @@
       "id": 8026,
       "type": "guest-to-host",
       "status": "published",
-      "rating": 2,
-      "publicReview": "Minor leak handled quickly; appreciate the updates.",
+      "rating": 4,
+      "publicReview": "Minor leak handled quickly; appreciate the updates. Overall good stay.",
       "reviewCategory": [
         {
           "category": "cleanliness",
-          "rating": 8
+          "rating": 9
         },
         {
           "category": "communication",
-          "rating": 7
+          "rating": 9
         },
         {
           "category": "check_in",
@@ -1026,7 +1026,7 @@
         },
         {
           "category": "value",
-          "rating": 6
+          "rating": 8
         }
       ],
       "submittedAt": "2025-10-21 07:40:00",
@@ -1154,12 +1154,12 @@
       "id": 8030,
       "type": "guest-to-host",
       "status": "published",
-      "rating": 3,
+      "rating": 4,
       "publicReview": "Nice stay; washing machine manual would help.",
       "reviewCategory": [
         {
           "category": "cleanliness",
-          "rating": 8
+          "rating": 9
         },
         {
           "category": "communication",
@@ -1179,7 +1179,7 @@
         },
         {
           "category": "value",
-          "rating": 7
+          "rating": 8
         }
       ],
       "submittedAt": "2025-10-20 09:48:00",
@@ -1307,16 +1307,16 @@
       "id": 8034,
       "type": "guest-to-host",
       "status": "published",
-      "rating": 2,
-      "publicReview": "Heating issue first night; host fixed promptly next morning.",
+      "rating": 4,
+      "publicReview": "Heating issue first night; host fixed promptly next morning. Good recovery.",
       "reviewCategory": [
         {
           "category": "cleanliness",
-          "rating": 8
+          "rating": 9
         },
         {
           "category": "communication",
-          "rating": 7
+          "rating": 9
         },
         {
           "category": "check_in",
@@ -1332,7 +1332,7 @@
         },
         {
           "category": "value",
-          "rating": 6
+          "rating": 8
         }
       ],
       "submittedAt": "2025-10-23 22:10:00",
@@ -1460,12 +1460,12 @@
       "id": 8038,
       "type": "guest-to-host",
       "status": "published",
-      "rating": 3,
+      "rating": 4,
       "publicReview": "Cool space; curtains let in early light.",
       "reviewCategory": [
         {
           "category": "cleanliness",
-          "rating": 8
+          "rating": 9
         },
         {
           "category": "communication",
@@ -1485,7 +1485,7 @@
         },
         {
           "category": "value",
-          "rating": 7
+          "rating": 8
         }
       ],
       "submittedAt": "2025-10-20 07:31:00",
