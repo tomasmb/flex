@@ -13,7 +13,7 @@
 
 **Key Pages:**
 - Dashboard: [/dashboard](https://flex-roan-rho.vercel.app/dashboard)
-- Property Example: [/property/shoreditch-heights](https://flex-roan-rho.vercel.app/property/shoreditch-heights)
+- Property Example: [/property/shoreditch-heights](https://flex-roan-rho.vercel.app/property/1a-w2-c-notting-hill-studio)
 - Google Reviews Demo: [/google-reviews-demo](https://flex-roan-rho.vercel.app/google-reviews-demo)
 
 ### Source Code
