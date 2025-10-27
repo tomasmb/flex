@@ -16,7 +16,10 @@ export default async function GoogleReviewsDemo() {
   const placeId = 'ChIJJ43m-K8cdkgR16GR7K-QIhQ';
 
   try {
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+    // Use absolute URL for server-side fetch in production
+    const baseUrl = process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
+      : 'http://localhost:3000';
     const response = await fetch(`${baseUrl}/api/reviews/google?placeId=${placeId}`, {
       cache: 'no-store',
     });
