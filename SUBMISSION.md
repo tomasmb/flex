@@ -116,8 +116,12 @@ The assessment example showed `host-to-guest` reviews, but we implemented `guest
 Full rationale documented in README.
 
 ### Mock Data Strategy
+
+**Note:** The assessment mentioned "Mock review data has been shared separately" but it was not received. Therefore, I created realistic mock data (`mock-data.json`) based on the provided API example structure. I assumed guest-to-host review fields (guests reviewing properties) to create 40 realistic reviews across 10 London properties.
+
+**Implementation:**
 - Mock data used when Hostaway sandbox returns no reviews (as expected)
-- API tries real Hostaway API first, falls back gracefully
+- API tries real Hostaway API first, falls back gracefully to mock data
 - Database seeded with 40 realistic reviews across 10 properties
 - No conflicts when API starts returning real data
 
