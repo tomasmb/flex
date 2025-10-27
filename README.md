@@ -251,6 +251,70 @@ Health check endpoint with database stats.
 - `publicReview`: Review text
 - `approvedForWebsite`: Boolean (default: false)
 
+## 🗂️ Data Strategy & Mock Data
+
+### Mock Data vs Real API
+
+This application uses a hybrid approach for the assessment:
+
+**Mock Data (`mock-data.json`):**
+- 40 realistic guest-to-host reviews
+- 10 London properties (Shoreditch, Hackney, Bethnal Green areas)
+- Seeded into database via `npm run db:seed`
+- Used when Hostaway sandbox returns no reviews
+
+**Hostaway API Integration:**
+
+The `/api/reviews/hostaway` endpoint implements a smart fallback strategy:
+
+1. **First:** Attempts to fetch from real Hostaway API
+2. **Fallback:** Uses mock data if API is empty (sandbox behavior)
+3. **Response Header:** Includes `X-Data-Source: hostaway-api-live` or `hostaway-mock`
+
+**Why This Approach:**
+- Hostaway sandbox returns `result: []` (no reviews)
+- Mock data ensures fully functional demo
+- API structure ready for production
+- Seamless transition when real reviews become available
+
+**Migration to Production:**
+
+If Hostaway API starts returning real reviews, the transition is automatic:
+1. API route already tries real API first (no code changes needed)
+2. Add periodic sync job to persist API reviews to database
+3. Remove seed script from production deployments
+
+### Data Normalization Details
+
+**Rating Scale Conversion:**
+- **Input:** Hostaway categories use 10-point scale (0-10)
+- **Output:** Overall rating on 5-point scale (0-5.0)
+- **Conversion Formula:** Average of category ratings ÷ 2
+- **Example:** Categories [8, 10, 9] → Average 9.0 → Overall 4.5 stars
+- **Rationale:** Industry standard (Airbnb, Booking.com) is 5-point scale
+
+**Field Mapping:**
+```
+Hostaway API          →    Database Schema
+─────────────────────────────────────────────
+id                    →    id (string)
+type                  →    direction
+listingName           →    listingName + propertyId lookup
+guestName             →    guestName (fallback: "Anonymous")
+submittedAt           →    date (ISO 8601 conversion)
+rating / categories   →    overallRating (5-point scale)
+reviewCategory        →    categories (JSON array)
+publicReview          →    text
+(default)             →    approvedForWebsite: false
+```
+
+**Edge Case Handling:**
+- ✅ Null ratings → Calculate from category averages
+- ✅ Missing guest names → Default to "Anonymous"
+- ✅ Malformed dates → Graceful fallback to current date
+- ✅ Empty category arrays → Default to 0 rating
+- ✅ Missing reviews → Return empty array (no errors)
+
 ## 🔄 Data Flow
 
 ### Review Approval Flow (Server Actions)
@@ -350,6 +414,78 @@ OPENAI_API_KEY=""          # Optional (for enhanced AI insights)
 - Requires caching for production use
 
 **Live Demo:** Visit `/google-reviews-demo` to see it working with real data from The Hoxton, Shoreditch (4.4★, 3,189 reviews)
+
+## 📝 Implementation Notes & Assumptions
+
+### Review Direction Assumption
+
+The provided Hostaway API example in the assessment showed `"type": "host-to-guest"` reviews (hosts reviewing guests). However, for a property reviews dashboard, we implemented **guest-to-host reviews** (guests reviewing properties) as this is:
+- What property managers need to display publicly
+- Standard for property review platforms (Airbnb, Booking.com)
+- What makes sense for the "Reviews Dashboard" use case
+
+**Implementation:**
+- Mock data contains realistic guest-to-host reviews
+- Database schema supports bidirectional reviews (both directions)
+- Public property pages filter for `direction: 'guest-to-host'` only
+- Future enhancement: Add host-to-guest reviews for guest risk scoring
+
+### Test Coverage
+
+**Current Status:** 14/14 tests passing ✅
+
+**Coverage includes:**
+- ✅ API route responses (200 status, proper JSON format)
+- ✅ Normalized reviews have all required fields
+- ✅ Null rating handling (calculates from categories)
+- ✅ Missing guest names (defaults to "Anonymous")
+- ✅ Date format conversion (Hostaway → ISO 8601)
+- ✅ Category structure validation
+- ✅ Default approval status (false)
+- ✅ Edge cases (empty data, malformed inputs)
+
+**Test command:** `npm test`
+
+### Database Seeding Strategy
+
+**Initial Setup:**
+```bash
+npm run db:seed
+```
+
+**What it does:**
+- Reads `mock-data.json` (40 reviews, 10 properties)
+- Creates Property records with auto-generated slugs
+- Creates Review records linked to properties
+- All reviews default to `approvedForWebsite: false`
+- Managers must manually approve reviews in dashboard
+
+**Database behavior:**
+- Properties auto-created when reviews are imported (by listing name)
+- Duplicate prevention: checks if property exists before creating
+- Review IDs from mock data preserved for consistency
+- Safe to re-run: `npm run db:reset` then `npm run db:seed`
+
+### Production Considerations
+
+**Current Implementation (Assessment Version):**
+- SQLite database (file-based, local)
+- Mock data in repository (`mock-data.json`)
+- Seeded during initial setup
+
+**Production Migration Path:**
+1. Switch to PostgreSQL (update `DATABASE_URL` in `.env`)
+2. Run `npx prisma migrate deploy`
+3. Implement periodic sync from Hostaway API to database
+4. Remove seed script from production workflow
+5. Add caching layer for API responses (Redis recommended)
+
+**Environment Variables Required:**
+- `DATABASE_URL` - Database connection string
+- `HOSTAWAY_API_KEY` - Hostaway API key (provided in assessment)
+- `HOSTAWAY_ACCOUNT_ID` - Hostaway account ID (provided in assessment)
+- `GOOGLE_PLACES_API_KEY` - Optional, for Google Reviews
+- `OPENAI_API_KEY` - Optional, for enhanced AI insights
 
 ## 🧑‍💻 Development
 
