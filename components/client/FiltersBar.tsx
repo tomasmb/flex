@@ -27,11 +27,13 @@ export function FiltersBar({ properties }: FiltersBarProps) {
       params.set(key, value);
     }
 
-    router.push(`${pathname}?${params.toString()}`);
+    const queryString = params.toString();
+    const url = queryString ? `${pathname}?${queryString}` : pathname;
+    router.push(url as any);
   };
 
   const clearFilters = () => {
-    router.push(pathname);
+    router.push(pathname as any);
   };
 
   const hasFilters = searchParams.toString().length > 0;

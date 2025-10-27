@@ -21,7 +21,17 @@ interface AIInsightsPanelProps {
 }
 
 export function AIInsightsPanel({ reviews }: AIInsightsPanelProps) {
-  const insights = generateAIInsights(reviews);
+  // Transform reviews to match the expected format for generateAIInsights
+  const transformedReviews = reviews.map(review => ({
+    id: review.id,
+    rating: review.overallRating,
+    text: review.publicReview,
+    categories: review.categories,
+    isPublished: review.approvedForWebsite,
+    listingName: review.listingName,
+  }));
+
+  const insights = generateAIInsights(transformedReviews);
 
   return (
     <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-6 shadow-card">

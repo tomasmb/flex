@@ -40,6 +40,7 @@ export function normalizeGoogleReviews(
 
     return {
       id: `google-${placeId}-${review.time}-${index}`,
+      direction: 'guest-to-host' as const, // Google reviews are always property reviews
       source: 'google' as const,
       listingName,
       guestName: review.author_name,

@@ -74,7 +74,7 @@ export async function getAllPropertiesWithReviews() {
   return db.property.findMany({
     include: {
       reviews: {
-        orderBy: { submittedAt: 'desc' },
+        orderBy: { date: 'desc' },
       },
     },
   });
@@ -88,8 +88,8 @@ export async function getPropertyBySlug(slug: string) {
     where: { slug },
     include: {
       reviews: {
-        where: { approvedForWebsite: true },
-        orderBy: { submittedAt: 'desc' },
+        where: { isPublished: true },
+        orderBy: { date: 'desc' },
         take: 6, // Show 6 most recent approved reviews
       },
     },
