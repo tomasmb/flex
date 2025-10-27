@@ -110,10 +110,14 @@ Visit http://localhost:3000 🎉
 - **Booking Sidebar**: Sticky CTA with date selection (UI only)
 
 ### 3. API Integration
-- **`/api/reviews/hostaway` (GET)**: Required endpoint returning normalized JSON
+- **`/api/reviews/hostaway` (GET)**: Required endpoint with real API integration
+  - Attempts to fetch from real Hostaway API first
+  - Falls back to mock data if API is empty/unavailable (sandbox behavior)
+  - Returns normalized JSON with data source tracking
 - **`/api/health` (GET)**: Health check with database stats
 - **Normalization**: Handles edge cases (null ratings, missing names, date formats)
 - **Validation**: Zod schemas at all API boundaries
+- **Error Handling**: Graceful degradation with proper logging
 
 ### 4. AI Insights (Differentiator)
 - **Top Themes**: Identifies recurring keywords (positive and negative)
