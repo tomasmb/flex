@@ -16,11 +16,6 @@ const ApprovalSchema = z.object({
   approved: z.boolean(),
 });
 
-const BulkApprovalSchema = z.object({
-  reviewIds: z.array(z.string()),
-  approved: z.boolean(),
-});
-
 /**
  * Toggle review approval status
  */
@@ -49,56 +44,3 @@ export async function approveReview(reviewId: string, approved: boolean) {
   }
 }
 
-/**
- * Bulk approve/unapprove multiple reviews
- */
-export async function bulkApproveReviews(reviewIds: string[], approved: boolean) {
-  try {
-    // Validate input
-    const validated = BulkApprovalSchema.parse({ reviewIds, approved });
-
-    // Update all reviews
-    await db.review.updateMany({
-      where: { id: { in: validated.reviewIds } },
-      data: { isPublished: validated.approved },
-    });
-
-    // Revalidate pages
-    revalidatePath('/dashboard');
-    revalidatePath('/property/[slug]', 'page');
-
-    return { success: true, count: validated.reviewIds.length };
-  } catch (error) {
-    console.error('Error bulk approving reviews:', error);
-    return {
-      success: false,
-      error: error instanceof Error ? error.message : 'Failed to update reviews',
-    };
-  }
-}
-
-/**
- * Auto-approve all 5-star reviews
- */
-export async function autoApproveHighRatedReviews() {
-  try {
-    const result = await db.review.updateMany({
-      where: {
-        rating: { gte: 5 },
-        isPublished: false,
-      },
-      data: { isPublished: true },
-    });
-
-    revalidatePath('/dashboard');
-    revalidatePath('/property/[slug]', 'page');
-
-    return { success: true, count: result.count };
-  } catch (error) {
-    console.error('Error auto-approving reviews:', error);
-    return {
-      success: false,
-      error: error instanceof Error ? error.message : 'Failed to auto-approve reviews',
-    };
-  }
-}
