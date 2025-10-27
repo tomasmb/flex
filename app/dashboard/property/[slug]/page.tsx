@@ -18,6 +18,7 @@ import {
 } from 'lucide-react';
 import { ApprovalToggle } from '@/components/client/ApprovalToggle';
 import { format } from 'date-fns';
+import { generateReviewRecommendations } from '@/lib/review-recommendations';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -91,6 +92,19 @@ export default async function PropertyDeepDivePage({ params }: PageProps) {
       : guestToHostAvg;
 
   const trend = recentAvg - previousAvg;
+
+  // Generate recommendations
+  const recommendations = generateReviewRecommendations(
+    guestToHostReviews.map((r) => ({
+      id: r.id,
+      rating: r.rating,
+      text: r.text,
+      isPublished: r.isPublished,
+    }))
+  );
+
+  // Filter high priority recommendations
+  const highPriorityRecs = recommendations.filter((r) => r.priority === 'high');
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -206,49 +220,104 @@ export default async function PropertyDeepDivePage({ params }: PageProps) {
             </p>
           </div>
 
+          {/* Recommendations Banner */}
+          {highPriorityRecs.length > 0 && (
+            <div className="mb-6 bg-blue-50 border border-blue-200 rounded-lg p-4">
+              <div className="flex items-start gap-3">
+                <div className="text-blue-600 text-lg">💡</div>
+                <div className="flex-1">
+                  <h3 className="font-medium text-gray-900 mb-2">
+                    {highPriorityRecs.length} Recommendation
+                    {highPriorityRecs.length > 1 ? 's' : ''}
+                  </h3>
+                  <div className="space-y-2">
+                    {highPriorityRecs.map((rec) => {
+                      const review = guestToHostReviews.find(
+                        (r) => r.id === rec.reviewId
+                      );
+                      return (
+                        <div key={rec.reviewId} className="text-sm">
+                          <span className="text-gray-700">
+                            {rec.shouldApprove ? '✓ Approve' : '✗ Unapprove'}{' '}
+                          </span>
+                          <span className="font-medium text-gray-900">
+                            {review?.guestName || 'Anonymous'}
+                          </span>
+                          <span className="text-gray-600">
+                            {' '}
+                            - {rec.reason}
+                          </span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
           {guestToHostReviews.length === 0 ? (
             <p className="text-gray-500 text-center py-8">
               No guest reviews yet for this property
             </p>
           ) : (
             <div className="space-y-4">
-              {guestToHostReviews.map((review) => (
-                <div
-                  key={review.id}
-                  className="border border-gray-200 rounded-lg p-6 hover:border-gray-300 transition-colors"
-                >
-                  <div className="flex items-start justify-between mb-3">
-                    <div>
-                      <div className="flex items-center gap-2 mb-1">
-                        <p className="font-semibold text-gray-900">
-                          {review.guestName || 'Anonymous'}
-                        </p>
-                        <span className="text-gray-400">•</span>
-                        <p className="text-sm text-gray-600">
-                          {format(new Date(review.date), 'MMM dd, yyyy')}
-                        </p>
-                        <span className="text-gray-400">•</span>
-                        <span className="text-xs px-2 py-1 bg-gray-100 text-gray-700 rounded">
-                          {review.channel || 'Direct'}
-                        </span>
-                      </div>
-                      {review.rating && (
-                        <div className="flex items-center gap-1">
-                          <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
-                          <span className="text-sm font-medium text-gray-900">
-                            {review.rating.toFixed(1)}
+              {guestToHostReviews.map((review) => {
+                const reviewRec = recommendations.find((r) => r.reviewId === review.id);
+                const hasHighPriorityRec = reviewRec?.priority === 'high';
+
+                return (
+                  <div
+                    key={review.id}
+                    className={`border rounded-lg p-6 hover:border-gray-300 transition-colors ${
+                      hasHighPriorityRec
+                        ? 'border-blue-300 bg-blue-50/30'
+                        : 'border-gray-200'
+                    }`}
+                  >
+                    <div className="flex items-start justify-between mb-3">
+                      <div>
+                        <div className="flex items-center gap-2 mb-1">
+                          <p className="font-semibold text-gray-900">
+                            {review.guestName || 'Anonymous'}
+                          </p>
+                          <span className="text-gray-400">•</span>
+                          <p className="text-sm text-gray-600">
+                            {format(new Date(review.date), 'MMM dd, yyyy')}
+                          </p>
+                          <span className="text-gray-400">•</span>
+                          <span className="text-xs px-2 py-1 bg-gray-100 text-gray-700 rounded">
+                            {review.channel || 'Direct'}
                           </span>
+                          {hasHighPriorityRec && (
+                            <span className="text-xs px-2 py-1 bg-blue-100 text-blue-700 rounded font-medium">
+                              💡 Recommended
+                            </span>
+                          )}
                         </div>
-                      )}
+                        {review.rating && (
+                          <div className="flex items-center gap-1">
+                            <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
+                            <span className="text-sm font-medium text-gray-900">
+                              {review.rating.toFixed(1)}
+                            </span>
+                          </div>
+                        )}
+                      </div>
+                      <ApprovalToggle
+                        reviewId={review.id}
+                        initialState={review.isPublished}
+                      />
                     </div>
-                    <ApprovalToggle
-                      reviewId={review.id}
-                      initialState={review.isPublished}
-                    />
+                    <p className="text-gray-700 leading-relaxed">{review.text}</p>
+                    {reviewRec && hasHighPriorityRec && (
+                      <div className="mt-3 text-xs text-blue-700 bg-blue-100/50 rounded px-3 py-2">
+                        {reviewRec.reason}
+                      </div>
+                    )}
                   </div>
-                  <p className="text-gray-700 leading-relaxed">{review.text}</p>
-                </div>
-              ))}
+                );
+              })}
             </div>
           )}
         </div>
