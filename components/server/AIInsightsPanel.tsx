@@ -135,7 +135,7 @@ export function AIInsightsPanel({ reviews }: AIInsightsPanelProps) {
           <div className="space-y-2">
             {insights.highlightQuotes.slice(0, 2).map((quote, index) => (
               <div key={index} className="bg-white rounded-lg p-3 italic text-sm text-text-secondary">
-                "{quote}"
+                &quot;{quote}&quot;
               </div>
             ))}
           </div>

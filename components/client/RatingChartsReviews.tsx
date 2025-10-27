@@ -100,7 +100,7 @@ export function RatingCharts({ timeSeriesData, distributionData }: RatingChartsP
           </BarChart>
         </ResponsiveContainer>
         <p className="text-xs text-[#6B7280] mt-2">
-          Compare rating distributions to identify if you're harsher on guests than they are on you
+          Compare rating distributions to identify if you&apos;re harsher on guests than they are on you
         </p>
       </div>
     </div>

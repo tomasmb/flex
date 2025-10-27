@@ -223,7 +223,7 @@ export default async function PropertyPage({ params }: PageProps) {
               </div>
 
               <p className="text-xs text-text-muted text-center mt-4">
-                You won't be charged yet
+                You won&apos;t be charged yet
               </p>
             </div>
           </div>

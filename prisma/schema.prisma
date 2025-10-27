@@ -20,6 +20,11 @@ model Property {
   address     String?
   city        String?  // City for grouping (e.g. "London", "Manchester")
 
+  // Google integration
+  googlePlaceId   String?  // Google Place ID for fetching reviews
+  googleRating    Float?   // Cached Google rating
+  googleReviewCount Int?   // Cached Google review count
+
   // Bidirectional reviews
   reviews     Review[]
 

@@ -285,13 +285,15 @@ OPENAI_API_KEY=""          # Optional (for enhanced AI insights)
 - [x] Manager dashboard with filtering and approval
 - [x] Public property page with approved reviews
 - [x] \`/api/reviews/hostaway\` endpoint (tested and working)
+- [x] **Google Reviews integration** (live API with demo page)
 - [x] Clean, intuitive UI matching Flex Living design
 - [x] Edge case handling (null ratings, missing data)
 - [x] TypeScript throughout
 - [x] Test coverage (14 tests passing)
-- [x] Documentation
+- [x] Documentation (including comprehensive Google findings report)
 
 ### 🌟 Differentiators
+- [x] **Google Reviews Working**: Live API integration with demo (goes beyond exploration)
 - [x] **AI Insights Panel**: Automated issue detection and recommendations
 - [x] **Server Components**: Zero-JavaScript default for optimal performance
 - [x] **Server Actions**: Modern mutation pattern with optimistic updates
@@ -299,15 +301,30 @@ OPENAI_API_KEY=""          # Optional (for enhanced AI insights)
 - [x] **Real-time KPIs**: Trend indicators, category breakdowns
 - [x] **Production-ready**: Clean code, proper error handling, validated with Zod
 
-### 📚 Google Reviews Exploration
-**Status**: Not implemented in MVP
+### 📚 Google Reviews Integration
+**Status**: ✅ **Working Implementation** (with demo)
 
-**Findings:**
-- **Places API**: Requires business verification and Place ID mapping
-- **Reviews API**: Limited to 5 most recent reviews (free tier)
-- **Rate Limits**: 10,000 requests/month on free tier
-- **Implementation Effort**: ~8 hours for full integration
-- **Recommendation**: Add in Phase 2 after core features validated
+**Implemented:**
+- ✅ `/api/reviews/google?placeId={PLACE_ID}` endpoint
+- ✅ Live demo page at `/google-reviews-demo`
+- ✅ Fetches real reviews from Google Places API
+- ✅ Normalization to standard format (1-5 → 0-10 scale)
+- ✅ Database schema ready (Property.googlePlaceId field)
+- ✅ Tested with real property (The Hoxton, Shoreditch)
+
+**How to Use:**
+1. Add `GOOGLE_PLACES_API_KEY` to `.env` (already configured)
+2. Find a property's Place ID using [Google Place ID Finder](https://developers.google.com/maps/documentation/places/web-service/place-id)
+3. Call `/api/reviews/google?placeId=YOUR_PLACE_ID`
+4. Reviews returned in normalized format, ready to store/display
+
+**Limitations (as documented in findings):**
+- Maximum 5 reviews per request (Google API limit)
+- No category breakdowns (Google doesn't provide)
+- Rate limits: ~$17 per 1,000 requests
+- Requires caching for production use
+
+**Live Demo:** Visit `/google-reviews-demo` to see it working with real data from The Hoxton, Shoreditch (4.4★, 3,189 reviews)
 
 ## 🧑‍💻 Development
 
