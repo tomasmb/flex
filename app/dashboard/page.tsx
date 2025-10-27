@@ -94,7 +94,7 @@ export default async function PortfolioOverviewPage() {
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 lg:px-8 py-8 space-y-8">
         {/* Portfolio KPIs */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
           <div className="bg-white rounded-xl p-6 border border-gray-200">
             <div className="flex items-center justify-between mb-2">
               <h3 className="text-sm font-medium text-gray-600 uppercase tracking-wide">
@@ -113,15 +113,30 @@ export default async function PortfolioOverviewPage() {
           <div className="bg-white rounded-xl p-6 border border-gray-200">
             <div className="flex items-center justify-between mb-2">
               <h3 className="text-sm font-medium text-gray-600 uppercase tracking-wide">
-                Average Rating
+                Property Rating
               </h3>
               <Star className="w-5 h-5 text-gray-400" />
             </div>
             <p className="text-3xl font-bold text-gray-900">
-              {portfolioKPIs.averageRating.toFixed(1)}
+              {portfolioKPIs.guestToHostAvg.toFixed(1)}
             </p>
             <p className="text-sm text-gray-500 mt-1">
-              {portfolioKPIs.totalReviews} total reviews
+              {portfolioKPIs.guestToHostCount} guest reviews
+            </p>
+          </div>
+
+          <div className="bg-white rounded-xl p-6 border border-gray-200">
+            <div className="flex items-center justify-between mb-2">
+              <h3 className="text-sm font-medium text-gray-600 uppercase tracking-wide">
+                Guest Quality
+              </h3>
+              <Star className="w-5 h-5 text-gray-400" />
+            </div>
+            <p className="text-3xl font-bold text-gray-900">
+              {portfolioKPIs.hostToGuestAvg.toFixed(1)}
+            </p>
+            <p className="text-sm text-gray-500 mt-1">
+              {portfolioKPIs.hostToGuestCount} host reviews
             </p>
           </div>
 
@@ -151,7 +166,7 @@ export default async function PortfolioOverviewPage() {
               {portfolioKPIs.propertiesAtRisk}
             </p>
             <p className="text-sm text-gray-500 mt-1">
-              Rating &lt; 4.0 (30 days)
+              Low ratings (30 days)
             </p>
           </div>
         </div>
@@ -192,21 +207,27 @@ export default async function PortfolioOverviewPage() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-3 gap-4">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                   <div>
-                    <p className="text-sm text-gray-600 mb-1">Avg Rating</p>
+                    <p className="text-xs text-gray-600 mb-1">Property Rating</p>
                     <p className="text-lg font-bold text-gray-900">
-                      {city.averageRating.toFixed(1)}
+                      {city.guestToHostAvg.toFixed(1)}
                     </p>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-600 mb-1">Reviews</p>
+                    <p className="text-xs text-gray-600 mb-1">Guest Quality</p>
+                    <p className="text-lg font-bold text-gray-900">
+                      {city.hostToGuestAvg.toFixed(1)}
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-xs text-gray-600 mb-1">Reviews</p>
                     <p className="text-lg font-bold text-gray-900">
                       {city.totalReviews}
                     </p>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-600 mb-1">Approval</p>
+                    <p className="text-xs text-gray-600 mb-1">Approval</p>
                     <p className="text-lg font-bold text-gray-900">
                       {city.approvalRate.toFixed(0)}%
                     </p>

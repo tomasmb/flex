@@ -124,28 +124,63 @@ export function calculatePortfolioKPIs(properties: PropertyWithReviews[]) {
         allReviews.length
       : 0;
 
+  const guestToHostAvg =
+    guestToHostReviews.length > 0
+      ? guestToHostReviews.reduce((sum, r) => sum + (r.rating || 0), 0) /
+        guestToHostReviews.length
+      : 0;
+
+  const hostToGuestAvg =
+    hostToGuestReviews.length > 0
+      ? hostToGuestReviews.reduce((sum, r) => sum + (r.rating || 0), 0) /
+        hostToGuestReviews.length
+      : 0;
+
   const approvedCount = guestToHostReviews.filter((r) => r.isPublished).length;
 
-  // Count properties with recent low ratings (< 4.0 in last 30 days)
+  // Count properties with recent low ratings in last 30 days
+  // Guest-to-host: < 4.0 on 5-point scale (< 4 stars)
+  // Host-to-guest: < 8.0 on 10-point scale (< 4 stars equivalent)
   const thirtyDaysAgo = new Date();
   thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
 
   const propertiesAtRisk = properties.filter((property) => {
-    const recentReviews = property.reviews.filter(
+    const recentGuestToHost = property.reviews.filter(
       (r) => r.direction === 'guest-to-host' && r.date >= thirtyDaysAgo
     );
-    if (recentReviews.length === 0) return false;
+    const recentHostToGuest = property.reviews.filter(
+      (r) => r.direction === 'host-to-guest' && r.date >= thirtyDaysAgo
+    );
 
-    const recentAvg =
-      recentReviews.reduce((sum, r) => sum + (r.rating || 0), 0) /
-      recentReviews.length;
-    return recentAvg < 4.0;
+    let hasLowGuestToHost = false;
+    let hasLowHostToGuest = false;
+
+    // Check guest-to-host ratings (5-point scale)
+    if (recentGuestToHost.length > 0) {
+      const guestToHostAvg =
+        recentGuestToHost.reduce((sum, r) => sum + (r.rating || 0), 0) /
+        recentGuestToHost.length;
+      hasLowGuestToHost = guestToHostAvg < 4.0;
+    }
+
+    // Check host-to-guest ratings (10-point scale)
+    if (recentHostToGuest.length > 0) {
+      const hostToGuestAvg =
+        recentHostToGuest.reduce((sum, r) => sum + (r.rating || 0), 0) /
+        recentHostToGuest.length;
+      hasLowHostToGuest = hostToGuestAvg < 8.0;
+    }
+
+    // Property is at risk if either rating is low
+    return hasLowGuestToHost || hasLowHostToGuest;
   }).length;
 
   return {
     totalProperties,
     totalReviews,
     averageRating,
+    guestToHostAvg,
+    hostToGuestAvg,
     approvedCount,
     propertiesAtRisk,
     guestToHostCount: guestToHostReviews.length,

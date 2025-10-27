@@ -8,14 +8,32 @@
       "rating": 5,
       "publicReview": "Spotless flat, seamless check-in, and fast responses.",
       "reviewCategory": [
-        { "category": "cleanliness", "rating": 10 },
-        { "category": "communication", "rating": 10 },
-        { "category": "check_in", "rating": 10 },
-        { "category": "location", "rating": 9 },
-        { "category": "accuracy", "rating": 10 },
-        { "category": "value", "rating": 9 }
+        {
+          "category": "cleanliness",
+          "rating": 10
+        },
+        {
+          "category": "communication",
+          "rating": 10
+        },
+        {
+          "category": "check_in",
+          "rating": 10
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "accuracy",
+          "rating": 10
+        },
+        {
+          "category": "value",
+          "rating": 9
+        }
       ],
-      "submittedAt": "2025-07-12 13:25:41",
+      "submittedAt": "2025-10-25 13:25:00",
       "guestName": "Alice Nguyen",
       "guestEmail": "alice.nguyen@example.com",
       "guestPlatformId": "airbnb_alice123",
@@ -29,14 +47,32 @@
       "rating": 4,
       "publicReview": "Great place overall; a little street noise at night.",
       "reviewCategory": [
-        { "category": "cleanliness", "rating": 9 },
-        { "category": "communication", "rating": 9 },
-        { "category": "check_in", "rating": 9 },
-        { "category": "location", "rating": 8 },
-        { "category": "accuracy", "rating": 9 },
-        { "category": "value", "rating": 8 }
+        {
+          "category": "cleanliness",
+          "rating": 9
+        },
+        {
+          "category": "communication",
+          "rating": 9
+        },
+        {
+          "category": "check_in",
+          "rating": 9
+        },
+        {
+          "category": "location",
+          "rating": 8
+        },
+        {
+          "category": "accuracy",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 8
+        }
       ],
-      "submittedAt": "2025-04-05 21:02:10",
+      "submittedAt": "2025-10-24 21:02:00",
       "guestName": "Marco Silva",
       "guestEmail": "marco.silva@example.com",
       "guestPlatformId": "booking_marco456",
@@ -50,14 +86,32 @@
       "rating": 3,
       "publicReview": "Comfortable stay but Wi-Fi dipped during a call.",
       "reviewCategory": [
-        { "category": "cleanliness", "rating": 9 },
-        { "category": "communication", "rating": 8 },
-        { "category": "check_in", "rating": 9 },
-        { "category": "location", "rating": 9 },
-        { "category": "accuracy", "rating": 8 },
-        { "category": "value", "rating": 7 }
+        {
+          "category": "cleanliness",
+          "rating": 9
+        },
+        {
+          "category": "communication",
+          "rating": 8
+        },
+        {
+          "category": "check_in",
+          "rating": 9
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "accuracy",
+          "rating": 8
+        },
+        {
+          "category": "value",
+          "rating": 7
+        }
       ],
-      "submittedAt": "2024-11-09 08:44:33",
+      "submittedAt": "2025-10-23 08:44:00",
       "guestName": "Chris Johnson",
       "guestEmail": "chris.johnson@example.com",
       "guestPlatformId": "direct_chris789",
@@ -71,13 +125,28 @@
       "rating": null,
       "publicReview": "Alice was lovely and left the flat immaculate.",
       "reviewCategory": [
-        { "category": "cleanliness", "rating": 10 },
-        { "category": "communication", "rating": 10 },
-        { "category": "respect_house_rules", "rating": 10 },
-        { "category": "honesty", "rating": 10 },
-        { "category": "checkout_adherence", "rating": 10 }
+        {
+          "category": "cleanliness",
+          "rating": 10
+        },
+        {
+          "category": "communication",
+          "rating": 10
+        },
+        {
+          "category": "respect_house_rules",
+          "rating": 10
+        },
+        {
+          "category": "honesty",
+          "rating": 10
+        },
+        {
+          "category": "checkout_adherence",
+          "rating": 10
+        }
       ],
-      "submittedAt": "2025-07-13 10:11:55",
+      "submittedAt": "2025-10-25 15:11:00",
       "guestName": "Alice Nguyen",
       "guestEmail": "alice.nguyen@example.com",
       "guestPlatformId": "airbnb_alice123",
@@ -92,14 +161,32 @@
       "rating": 5,
       "publicReview": "Charming studio and super clean. Perfect for a weekend.",
       "reviewCategory": [
-        { "category": "cleanliness", "rating": 10 },
-        { "category": "communication", "rating": 10 },
-        { "category": "check_in", "rating": 10 },
-        { "category": "location", "rating": 9 },
-        { "category": "accuracy", "rating": 9 },
-        { "category": "value", "rating": 9 }
+        {
+          "category": "cleanliness",
+          "rating": 10
+        },
+        {
+          "category": "communication",
+          "rating": 10
+        },
+        {
+          "category": "check_in",
+          "rating": 10
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "accuracy",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 9
+        }
       ],
-      "submittedAt": "2025-08-22 17:40:09",
+      "submittedAt": "2025-10-22 17:40:00",
       "guestName": "Sofia Martinez",
       "guestEmail": "sofia.martinez@example.com",
       "guestPlatformId": "airbnb_sofia234",
@@ -113,14 +200,32 @@
       "rating": 4,
       "publicReview": "Great location; coffee machine could use stronger pods.",
       "reviewCategory": [
-        { "category": "cleanliness", "rating": 9 },
-        { "category": "communication", "rating": 9 },
-        { "category": "check_in", "rating": 9 },
-        { "category": "location", "rating": 10 },
-        { "category": "accuracy", "rating": 8 },
-        { "category": "value", "rating": 8 }
+        {
+          "category": "cleanliness",
+          "rating": 9
+        },
+        {
+          "category": "communication",
+          "rating": 9
+        },
+        {
+          "category": "check_in",
+          "rating": 9
+        },
+        {
+          "category": "location",
+          "rating": 10
+        },
+        {
+          "category": "accuracy",
+          "rating": 8
+        },
+        {
+          "category": "value",
+          "rating": 8
+        }
       ],
-      "submittedAt": "2025-06-15 09:12:57",
+      "submittedAt": "2025-10-21 09:12:00",
       "guestName": "Emma Brown",
       "guestEmail": "emma.brown@example.com",
       "guestPlatformId": "booking_emma567",
@@ -134,14 +239,32 @@
       "rating": 2,
       "publicReview": "Entry code failed at first; resolved after 10 minutes.",
       "reviewCategory": [
-        { "category": "cleanliness", "rating": 8 },
-        { "category": "communication", "rating": 6 },
-        { "category": "check_in", "rating": 5 },
-        { "category": "location", "rating": 9 },
-        { "category": "accuracy", "rating": 7 },
-        { "category": "value", "rating": 6 }
+        {
+          "category": "cleanliness",
+          "rating": 8
+        },
+        {
+          "category": "communication",
+          "rating": 6
+        },
+        {
+          "category": "check_in",
+          "rating": 5
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "accuracy",
+          "rating": 7
+        },
+        {
+          "category": "value",
+          "rating": 6
+        }
       ],
-      "submittedAt": "2024-10-01 20:31:41",
+      "submittedAt": "2025-10-20 20:31:00",
       "guestName": "Liam O'Connor",
       "guestEmail": "liam.oconnor@example.com",
       "guestPlatformId": "direct_liam890",
@@ -155,13 +278,28 @@
       "rating": null,
       "publicReview": "Sofia followed all house rules and was a pleasure to host.",
       "reviewCategory": [
-        { "category": "cleanliness", "rating": 10 },
-        { "category": "communication", "rating": 10 },
-        { "category": "respect_house_rules", "rating": 10 },
-        { "category": "honesty", "rating": 10 },
-        { "category": "checkout_adherence", "rating": 10 }
+        {
+          "category": "cleanliness",
+          "rating": 10
+        },
+        {
+          "category": "communication",
+          "rating": 10
+        },
+        {
+          "category": "respect_house_rules",
+          "rating": 10
+        },
+        {
+          "category": "honesty",
+          "rating": 10
+        },
+        {
+          "category": "checkout_adherence",
+          "rating": 10
+        }
       ],
-      "submittedAt": "2025-08-23 11:05:19",
+      "submittedAt": "2025-10-22 18:05:00",
       "guestName": "Sofia Martinez",
       "guestEmail": "sofia.martinez@example.com",
       "guestPlatformId": "airbnb_sofia234",
@@ -176,14 +314,32 @@
       "rating": 5,
       "publicReview": "Stylish loft with great light; fast Wi-Fi for work.",
       "reviewCategory": [
-        { "category": "cleanliness", "rating": 10 },
-        { "category": "communication", "rating": 10 },
-        { "category": "check_in", "rating": 10 },
-        { "category": "location", "rating": 9 },
-        { "category": "accuracy", "rating": 9 },
-        { "category": "value", "rating": 9 }
+        {
+          "category": "cleanliness",
+          "rating": 10
+        },
+        {
+          "category": "communication",
+          "rating": 10
+        },
+        {
+          "category": "check_in",
+          "rating": 10
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "accuracy",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 9
+        }
       ],
-      "submittedAt": "2025-09-10 12:10:05",
+      "submittedAt": "2025-10-24 12:10:00",
       "guestName": "Hannah Lee",
       "guestEmail": "hannah.lee@example.com",
       "guestPlatformId": "airbnb_hannah345",
@@ -197,14 +353,32 @@
       "rating": 4,
       "publicReview": "Loved the decor; bedroom darker than photos.",
       "reviewCategory": [
-        { "category": "cleanliness", "rating": 9 },
-        { "category": "communication", "rating": 9 },
-        { "category": "check_in", "rating": 9 },
-        { "category": "location", "rating": 8 },
-        { "category": "accuracy", "rating": 8 },
-        { "category": "value", "rating": 8 }
+        {
+          "category": "cleanliness",
+          "rating": 9
+        },
+        {
+          "category": "communication",
+          "rating": 9
+        },
+        {
+          "category": "check_in",
+          "rating": 9
+        },
+        {
+          "category": "location",
+          "rating": 8
+        },
+        {
+          "category": "accuracy",
+          "rating": 8
+        },
+        {
+          "category": "value",
+          "rating": 8
+        }
       ],
-      "submittedAt": "2025-05-27 18:55:12",
+      "submittedAt": "2025-10-23 18:55:00",
       "guestName": "Priya Patel",
       "guestEmail": "priya.patel@example.com",
       "guestPlatformId": "booking_priya678",
@@ -218,14 +392,32 @@
       "rating": 3,
       "publicReview": "Good stay; shower pressure could be stronger.",
       "reviewCategory": [
-        { "category": "cleanliness", "rating": 8 },
-        { "category": "communication", "rating": 8 },
-        { "category": "check_in", "rating": 9 },
-        { "category": "location", "rating": 9 },
-        { "category": "accuracy", "rating": 8 },
-        { "category": "value", "rating": 7 }
+        {
+          "category": "cleanliness",
+          "rating": 8
+        },
+        {
+          "category": "communication",
+          "rating": 8
+        },
+        {
+          "category": "check_in",
+          "rating": 9
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "accuracy",
+          "rating": 8
+        },
+        {
+          "category": "value",
+          "rating": 7
+        }
       ],
-      "submittedAt": "2024-12-11 19:44:02",
+      "submittedAt": "2025-10-22 19:44:00",
       "guestName": "Daniel Kim",
       "guestEmail": "daniel.kim@example.com",
       "guestPlatformId": "direct_daniel901",
@@ -239,13 +431,28 @@
       "rating": null,
       "publicReview": "Hannah left the loft spotless and was communicative.",
       "reviewCategory": [
-        { "category": "cleanliness", "rating": 10 },
-        { "category": "communication", "rating": 10 },
-        { "category": "respect_house_rules", "rating": 10 },
-        { "category": "honesty", "rating": 10 },
-        { "category": "checkout_adherence", "rating": 10 }
+        {
+          "category": "cleanliness",
+          "rating": 10
+        },
+        {
+          "category": "communication",
+          "rating": 10
+        },
+        {
+          "category": "respect_house_rules",
+          "rating": 10
+        },
+        {
+          "category": "honesty",
+          "rating": 10
+        },
+        {
+          "category": "checkout_adherence",
+          "rating": 10
+        }
       ],
-      "submittedAt": "2025-09-11 09:02:41",
+      "submittedAt": "2025-10-24 13:02:00",
       "guestName": "Hannah Lee",
       "guestEmail": "hannah.lee@example.com",
       "guestPlatformId": "airbnb_hannah345",
@@ -260,14 +467,32 @@
       "rating": 4,
       "publicReview": "Bright flat near the park. Bed a bit firm for me.",
       "reviewCategory": [
-        { "category": "cleanliness", "rating": 9 },
-        { "category": "communication", "rating": 9 },
-        { "category": "check_in", "rating": 10 },
-        { "category": "location", "rating": 10 },
-        { "category": "accuracy", "rating": 9 },
-        { "category": "value", "rating": 8 }
+        {
+          "category": "cleanliness",
+          "rating": 9
+        },
+        {
+          "category": "communication",
+          "rating": 9
+        },
+        {
+          "category": "check_in",
+          "rating": 10
+        },
+        {
+          "category": "location",
+          "rating": 10
+        },
+        {
+          "category": "accuracy",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 8
+        }
       ],
-      "submittedAt": "2025-06-30 16:12:09",
+      "submittedAt": "2025-10-21 16:12:00",
       "guestName": "Daniel Kim",
       "guestEmail": "daniel.kim@example.com",
       "guestPlatformId": "direct_daniel901",
@@ -281,14 +506,32 @@
       "rating": 5,
       "publicReview": "Host went above and beyond with local tips—awesome stay!",
       "reviewCategory": [
-        { "category": "cleanliness", "rating": 10 },
-        { "category": "communication", "rating": 10 },
-        { "category": "check_in", "rating": 10 },
-        { "category": "location", "rating": 10 },
-        { "category": "accuracy", "rating": 9 },
-        { "category": "value", "rating": 9 }
+        {
+          "category": "cleanliness",
+          "rating": 10
+        },
+        {
+          "category": "communication",
+          "rating": 10
+        },
+        {
+          "category": "check_in",
+          "rating": 10
+        },
+        {
+          "category": "location",
+          "rating": 10
+        },
+        {
+          "category": "accuracy",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 9
+        }
       ],
-      "submittedAt": "2025-03-18 10:44:33",
+      "submittedAt": "2025-10-25 10:44:00",
       "guestName": "Yuki Tanaka",
       "guestEmail": "yuki.tanaka@example.com",
       "guestPlatformId": "airbnb_yuki012",
@@ -302,14 +545,32 @@
       "rating": 3,
       "publicReview": "Nice place; heating took a while to warm up.",
       "reviewCategory": [
-        { "category": "cleanliness", "rating": 8 },
-        { "category": "communication", "rating": 8 },
-        { "category": "check_in", "rating": 9 },
-        { "category": "location", "rating": 9 },
-        { "category": "accuracy", "rating": 8 },
-        { "category": "value", "rating": 7 }
+        {
+          "category": "cleanliness",
+          "rating": 8
+        },
+        {
+          "category": "communication",
+          "rating": 8
+        },
+        {
+          "category": "check_in",
+          "rating": 9
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "accuracy",
+          "rating": 8
+        },
+        {
+          "category": "value",
+          "rating": 7
+        }
       ],
-      "submittedAt": "2024-09-22 14:21:44",
+      "submittedAt": "2025-10-20 14:21:00",
       "guestName": "Grace Chen",
       "guestEmail": "grace.chen@example.com",
       "guestPlatformId": "booking_grace345",
@@ -323,13 +584,28 @@
       "rating": null,
       "publicReview": "Yuki was respectful and easy to host. Welcome back!",
       "reviewCategory": [
-        { "category": "cleanliness", "rating": 10 },
-        { "category": "communication", "rating": 10 },
-        { "category": "respect_house_rules", "rating": 10 },
-        { "category": "honesty", "rating": 10 },
-        { "category": "checkout_adherence", "rating": 10 }
+        {
+          "category": "cleanliness",
+          "rating": 10
+        },
+        {
+          "category": "communication",
+          "rating": 10
+        },
+        {
+          "category": "respect_house_rules",
+          "rating": 10
+        },
+        {
+          "category": "honesty",
+          "rating": 10
+        },
+        {
+          "category": "checkout_adherence",
+          "rating": 10
+        }
       ],
-      "submittedAt": "2025-03-19 09:20:18",
+      "submittedAt": "2025-10-25 11:20:00",
       "guestName": "Yuki Tanaka",
       "guestEmail": "yuki.tanaka@example.com",
       "guestPlatformId": "airbnb_yuki012",
@@ -344,14 +620,32 @@
       "rating": 5,
       "publicReview": "Views were fantastic; quiet at night and comfy bed.",
       "reviewCategory": [
-        { "category": "cleanliness", "rating": 10 },
-        { "category": "communication", "rating": 9 },
-        { "category": "check_in", "rating": 10 },
-        { "category": "location", "rating": 10 },
-        { "category": "accuracy", "rating": 9 },
-        { "category": "value", "rating": 9 }
+        {
+          "category": "cleanliness",
+          "rating": 10
+        },
+        {
+          "category": "communication",
+          "rating": 9
+        },
+        {
+          "category": "check_in",
+          "rating": 10
+        },
+        {
+          "category": "location",
+          "rating": 10
+        },
+        {
+          "category": "accuracy",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 9
+        }
       ],
-      "submittedAt": "2025-08-02 11:55:49",
+      "submittedAt": "2025-10-23 11:55:00",
       "guestName": "Tom Becker",
       "guestEmail": "tom.becker@example.com",
       "guestPlatformId": "airbnb_tom456",
@@ -365,14 +659,32 @@
       "rating": 4,
       "publicReview": "Great Wi-Fi for calls; kitchen missing a baking tray.",
       "reviewCategory": [
-        { "category": "cleanliness", "rating": 9 },
-        { "category": "communication", "rating": 9 },
-        { "category": "check_in", "rating": 9 },
-        { "category": "location", "rating": 9 },
-        { "category": "accuracy", "rating": 9 },
-        { "category": "value", "rating": 8 }
+        {
+          "category": "cleanliness",
+          "rating": 9
+        },
+        {
+          "category": "communication",
+          "rating": 9
+        },
+        {
+          "category": "check_in",
+          "rating": 9
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "accuracy",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 8
+        }
       ],
-      "submittedAt": "2025-05-06 07:33:02",
+      "submittedAt": "2025-10-22 07:33:00",
       "guestName": "Marta Kowalski",
       "guestEmail": "marta.kowalski@example.com",
       "guestPlatformId": "booking_marta789",
@@ -386,14 +698,32 @@
       "rating": 2,
       "publicReview": "Lift out for a day—host kept me updated promptly.",
       "reviewCategory": [
-        { "category": "cleanliness", "rating": 8 },
-        { "category": "communication", "rating": 7 },
-        { "category": "check_in", "rating": 8 },
-        { "category": "location", "rating": 9 },
-        { "category": "accuracy", "rating": 8 },
-        { "category": "value", "rating": 6 }
+        {
+          "category": "cleanliness",
+          "rating": 8
+        },
+        {
+          "category": "communication",
+          "rating": 7
+        },
+        {
+          "category": "check_in",
+          "rating": 8
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "accuracy",
+          "rating": 8
+        },
+        {
+          "category": "value",
+          "rating": 6
+        }
       ],
-      "submittedAt": "2024-10-14 21:14:29",
+      "submittedAt": "2025-10-21 21:14:00",
       "guestName": "Leo Martins",
       "guestEmail": "leo.martins@example.com",
       "guestPlatformId": "direct_leo123",
@@ -407,13 +737,28 @@
       "rating": null,
       "publicReview": "Tom left the apartment tidy and communicated well.",
       "reviewCategory": [
-        { "category": "cleanliness", "rating": 10 },
-        { "category": "communication", "rating": 10 },
-        { "category": "respect_house_rules", "rating": 10 },
-        { "category": "honesty", "rating": 9 },
-        { "category": "checkout_adherence", "rating": 10 }
+        {
+          "category": "cleanliness",
+          "rating": 10
+        },
+        {
+          "category": "communication",
+          "rating": 10
+        },
+        {
+          "category": "respect_house_rules",
+          "rating": 10
+        },
+        {
+          "category": "honesty",
+          "rating": 9
+        },
+        {
+          "category": "checkout_adherence",
+          "rating": 10
+        }
       ],
-      "submittedAt": "2025-08-03 09:01:13",
+      "submittedAt": "2025-10-23 12:01:00",
       "guestName": "Tom Becker",
       "guestEmail": "tom.becker@example.com",
       "guestPlatformId": "airbnb_tom456",
@@ -428,14 +773,32 @@
       "rating": 5,
       "publicReview": "Peaceful mews home; check-in directions crystal clear.",
       "reviewCategory": [
-        { "category": "cleanliness", "rating": 10 },
-        { "category": "communication", "rating": 10 },
-        { "category": "check_in", "rating": 10 },
-        { "category": "location", "rating": 9 },
-        { "category": "accuracy", "rating": 10 },
-        { "category": "value", "rating": 9 }
+        {
+          "category": "cleanliness",
+          "rating": 10
+        },
+        {
+          "category": "communication",
+          "rating": 10
+        },
+        {
+          "category": "check_in",
+          "rating": 10
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "accuracy",
+          "rating": 10
+        },
+        {
+          "category": "value",
+          "rating": 9
+        }
       ],
-      "submittedAt": "2025-07-28 15:10:37",
+      "submittedAt": "2025-10-25 15:10:00",
       "guestName": "Sara Lopez",
       "guestEmail": "sara.lopez@example.com",
       "guestPlatformId": "airbnb_sara567",
@@ -449,14 +812,32 @@
       "rating": 4,
       "publicReview": "Very comfortable; some footsteps audible in the morning.",
       "reviewCategory": [
-        { "category": "cleanliness", "rating": 9 },
-        { "category": "communication", "rating": 9 },
-        { "category": "check_in", "rating": 9 },
-        { "category": "location", "rating": 9 },
-        { "category": "accuracy", "rating": 9 },
-        { "category": "value", "rating": 8 }
+        {
+          "category": "cleanliness",
+          "rating": 9
+        },
+        {
+          "category": "communication",
+          "rating": 9
+        },
+        {
+          "category": "check_in",
+          "rating": 9
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "accuracy",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 8
+        }
       ],
-      "submittedAt": "2025-03-02 19:18:11",
+      "submittedAt": "2025-10-24 19:18:00",
       "guestName": "Jonah Park",
       "guestEmail": "jonah.park@example.com",
       "guestPlatformId": "booking_jonah890",
@@ -470,14 +851,32 @@
       "rating": 3,
       "publicReview": "Good stay; thermostat took a moment to figure out.",
       "reviewCategory": [
-        { "category": "cleanliness", "rating": 8 },
-        { "category": "communication", "rating": 8 },
-        { "category": "check_in", "rating": 9 },
-        { "category": "location", "rating": 9 },
-        { "category": "accuracy", "rating": 8 },
-        { "category": "value", "rating": 7 }
+        {
+          "category": "cleanliness",
+          "rating": 8
+        },
+        {
+          "category": "communication",
+          "rating": 8
+        },
+        {
+          "category": "check_in",
+          "rating": 9
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "accuracy",
+          "rating": 8
+        },
+        {
+          "category": "value",
+          "rating": 7
+        }
       ],
-      "submittedAt": "2024-12-20 13:44:59",
+      "submittedAt": "2025-10-20 13:44:00",
       "guestName": "Chen Wei",
       "guestEmail": "chen.wei@example.com",
       "guestPlatformId": "direct_chen012",
@@ -491,13 +890,28 @@
       "rating": null,
       "publicReview": "Sara respected all rules and left the mews spotless.",
       "reviewCategory": [
-        { "category": "cleanliness", "rating": 10 },
-        { "category": "communication", "rating": 10 },
-        { "category": "respect_house_rules", "rating": 10 },
-        { "category": "honesty", "rating": 10 },
-        { "category": "checkout_adherence", "rating": 10 }
+        {
+          "category": "cleanliness",
+          "rating": 10
+        },
+        {
+          "category": "communication",
+          "rating": 10
+        },
+        {
+          "category": "respect_house_rules",
+          "rating": 10
+        },
+        {
+          "category": "honesty",
+          "rating": 10
+        },
+        {
+          "category": "checkout_adherence",
+          "rating": 10
+        }
       ],
-      "submittedAt": "2025-07-29 09:40:01",
+      "submittedAt": "2025-10-25 16:40:00",
       "guestName": "Sara Lopez",
       "guestEmail": "sara.lopez@example.com",
       "guestPlatformId": "airbnb_sara567",
@@ -512,14 +926,32 @@
       "rating": 5,
       "publicReview": "Sunny terrace and quiet street—loved it.",
       "reviewCategory": [
-        { "category": "cleanliness", "rating": 10 },
-        { "category": "communication", "rating": 10 },
-        { "category": "check_in", "rating": 10 },
-        { "category": "location", "rating": 9 },
-        { "category": "accuracy", "rating": 9 },
-        { "category": "value", "rating": 9 }
+        {
+          "category": "cleanliness",
+          "rating": 10
+        },
+        {
+          "category": "communication",
+          "rating": 10
+        },
+        {
+          "category": "check_in",
+          "rating": 10
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "accuracy",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 9
+        }
       ],
-      "submittedAt": "2025-09-03 08:05:42",
+      "submittedAt": "2025-10-24 08:05:00",
       "guestName": "Nina Rossi",
       "guestEmail": "nina.rossi@example.com",
       "guestPlatformId": "airbnb_nina678",
@@ -533,14 +965,32 @@
       "rating": 4,
       "publicReview": "Great stay; bedroom gets warm in the afternoon sun.",
       "reviewCategory": [
-        { "category": "cleanliness", "rating": 9 },
-        { "category": "communication", "rating": 9 },
-        { "category": "check_in", "rating": 9 },
-        { "category": "location", "rating": 9 },
-        { "category": "accuracy", "rating": 8 },
-        { "category": "value", "rating": 8 }
+        {
+          "category": "cleanliness",
+          "rating": 9
+        },
+        {
+          "category": "communication",
+          "rating": 9
+        },
+        {
+          "category": "check_in",
+          "rating": 9
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "accuracy",
+          "rating": 8
+        },
+        {
+          "category": "value",
+          "rating": 8
+        }
       ],
-      "submittedAt": "2025-06-09 12:21:19",
+      "submittedAt": "2025-10-23 12:21:00",
       "guestName": "Omar Faruk",
       "guestEmail": "omar.faruk@example.com",
       "guestPlatformId": "booking_omar901",
@@ -554,14 +1004,32 @@
       "rating": 2,
       "publicReview": "Minor leak handled quickly; appreciate the updates.",
       "reviewCategory": [
-        { "category": "cleanliness", "rating": 8 },
-        { "category": "communication", "rating": 7 },
-        { "category": "check_in", "rating": 8 },
-        { "category": "location", "rating": 8 },
-        { "category": "accuracy", "rating": 8 },
-        { "category": "value", "rating": 6 }
+        {
+          "category": "cleanliness",
+          "rating": 8
+        },
+        {
+          "category": "communication",
+          "rating": 7
+        },
+        {
+          "category": "check_in",
+          "rating": 8
+        },
+        {
+          "category": "location",
+          "rating": 8
+        },
+        {
+          "category": "accuracy",
+          "rating": 8
+        },
+        {
+          "category": "value",
+          "rating": 6
+        }
       ],
-      "submittedAt": "2024-11-28 07:40:15",
+      "submittedAt": "2025-10-21 07:40:00",
       "guestName": "Helena Novak",
       "guestEmail": "helena.novak@example.com",
       "guestPlatformId": "direct_helena234",
@@ -575,13 +1043,28 @@
       "rating": null,
       "publicReview": "Nina was friendly, tidy, and very respectful.",
       "reviewCategory": [
-        { "category": "cleanliness", "rating": 10 },
-        { "category": "communication", "rating": 10 },
-        { "category": "respect_house_rules", "rating": 10 },
-        { "category": "honesty", "rating": 10 },
-        { "category": "checkout_adherence", "rating": 10 }
+        {
+          "category": "cleanliness",
+          "rating": 10
+        },
+        {
+          "category": "communication",
+          "rating": 10
+        },
+        {
+          "category": "respect_house_rules",
+          "rating": 10
+        },
+        {
+          "category": "honesty",
+          "rating": 10
+        },
+        {
+          "category": "checkout_adherence",
+          "rating": 10
+        }
       ],
-      "submittedAt": "2025-09-04 09:15:23",
+      "submittedAt": "2025-10-24 09:15:00",
       "guestName": "Nina Rossi",
       "guestEmail": "nina.rossi@example.com",
       "guestPlatformId": "airbnb_nina678",
@@ -596,14 +1079,32 @@
       "rating": 5,
       "publicReview": "Lovely courtyard; super convenient coffee spots nearby.",
       "reviewCategory": [
-        { "category": "cleanliness", "rating": 10 },
-        { "category": "communication", "rating": 10 },
-        { "category": "check_in", "rating": 10 },
-        { "category": "location", "rating": 10 },
-        { "category": "accuracy", "rating": 9 },
-        { "category": "value", "rating": 9 }
+        {
+          "category": "cleanliness",
+          "rating": 10
+        },
+        {
+          "category": "communication",
+          "rating": 10
+        },
+        {
+          "category": "check_in",
+          "rating": 10
+        },
+        {
+          "category": "location",
+          "rating": 10
+        },
+        {
+          "category": "accuracy",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 9
+        }
       ],
-      "submittedAt": "2025-08-18 10:32:44",
+      "submittedAt": "2025-10-22 10:32:00",
       "guestName": "Rafael Gomez",
       "guestEmail": "rafael.gomez@example.com",
       "guestPlatformId": "airbnb_rafael345",
@@ -617,14 +1118,32 @@
       "rating": 4,
       "publicReview": "Clean and comfy; pillows a bit soft for me.",
       "reviewCategory": [
-        { "category": "cleanliness", "rating": 9 },
-        { "category": "communication", "rating": 9 },
-        { "category": "check_in", "rating": 9 },
-        { "category": "location", "rating": 9 },
-        { "category": "accuracy", "rating": 8 },
-        { "category": "value", "rating": 8 }
+        {
+          "category": "cleanliness",
+          "rating": 9
+        },
+        {
+          "category": "communication",
+          "rating": 9
+        },
+        {
+          "category": "check_in",
+          "rating": 9
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "accuracy",
+          "rating": 8
+        },
+        {
+          "category": "value",
+          "rating": 8
+        }
       ],
-      "submittedAt": "2025-04-26 19:11:07",
+      "submittedAt": "2025-10-21 19:11:00",
       "guestName": "Linda Park",
       "guestEmail": "linda.park@example.com",
       "guestPlatformId": "booking_linda456",
@@ -638,14 +1157,32 @@
       "rating": 3,
       "publicReview": "Nice stay; washing machine manual would help.",
       "reviewCategory": [
-        { "category": "cleanliness", "rating": 8 },
-        { "category": "communication", "rating": 8 },
-        { "category": "check_in", "rating": 9 },
-        { "category": "location", "rating": 9 },
-        { "category": "accuracy", "rating": 8 },
-        { "category": "value", "rating": 7 }
+        {
+          "category": "cleanliness",
+          "rating": 8
+        },
+        {
+          "category": "communication",
+          "rating": 8
+        },
+        {
+          "category": "check_in",
+          "rating": 9
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "accuracy",
+          "rating": 8
+        },
+        {
+          "category": "value",
+          "rating": 7
+        }
       ],
-      "submittedAt": "2024-12-05 09:48:26",
+      "submittedAt": "2025-10-20 09:48:00",
       "guestName": "Victor Almeida",
       "guestEmail": "victor.almeida@example.com",
       "guestPlatformId": "direct_victor567",
@@ -659,13 +1196,28 @@
       "rating": null,
       "publicReview": "Rafael left the place spotless and communicated clearly.",
       "reviewCategory": [
-        { "category": "cleanliness", "rating": 10 },
-        { "category": "communication", "rating": 10 },
-        { "category": "respect_house_rules", "rating": 10 },
-        { "category": "honesty", "rating": 10 },
-        { "category": "checkout_adherence", "rating": 10 }
+        {
+          "category": "cleanliness",
+          "rating": 10
+        },
+        {
+          "category": "communication",
+          "rating": 10
+        },
+        {
+          "category": "respect_house_rules",
+          "rating": 10
+        },
+        {
+          "category": "honesty",
+          "rating": 10
+        },
+        {
+          "category": "checkout_adherence",
+          "rating": 10
+        }
       ],
-      "submittedAt": "2025-08-19 08:57:03",
+      "submittedAt": "2025-10-22 11:57:00",
       "guestName": "Rafael Gomez",
       "guestEmail": "rafael.gomez@example.com",
       "guestPlatformId": "airbnb_rafael345",
@@ -680,14 +1232,32 @@
       "rating": 5,
       "publicReview": "Spacious townhouse; perfect for a family visit.",
       "reviewCategory": [
-        { "category": "cleanliness", "rating": 10 },
-        { "category": "communication", "rating": 10 },
-        { "category": "check_in", "rating": 10 },
-        { "category": "location", "rating": 9 },
-        { "category": "accuracy", "rating": 9 },
-        { "category": "value", "rating": 9 }
+        {
+          "category": "cleanliness",
+          "rating": 10
+        },
+        {
+          "category": "communication",
+          "rating": 10
+        },
+        {
+          "category": "check_in",
+          "rating": 10
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "accuracy",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 9
+        }
       ],
-      "submittedAt": "2025-07-07 14:03:32",
+      "submittedAt": "2025-10-25 14:03:00",
       "guestName": "Caroline West",
       "guestEmail": "caroline.west@example.com",
       "guestPlatformId": "airbnb_caroline678",
@@ -701,14 +1271,32 @@
       "rating": 4,
       "publicReview": "Very nice; one bathroom light needed a new bulb.",
       "reviewCategory": [
-        { "category": "cleanliness", "rating": 9 },
-        { "category": "communication", "rating": 9 },
-        { "category": "check_in", "rating": 9 },
-        { "category": "location", "rating": 9 },
-        { "category": "accuracy", "rating": 9 },
-        { "category": "value", "rating": 8 }
+        {
+          "category": "cleanliness",
+          "rating": 9
+        },
+        {
+          "category": "communication",
+          "rating": 9
+        },
+        {
+          "category": "check_in",
+          "rating": 9
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "accuracy",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 8
+        }
       ],
-      "submittedAt": "2025-03-24 09:21:44",
+      "submittedAt": "2025-10-24 09:21:00",
       "guestName": "Ahmed Hassan",
       "guestEmail": "ahmed.hassan@example.com",
       "guestPlatformId": "booking_ahmed789",
@@ -722,14 +1310,32 @@
       "rating": 2,
       "publicReview": "Heating issue first night; host fixed promptly next morning.",
       "reviewCategory": [
-        { "category": "cleanliness", "rating": 8 },
-        { "category": "communication", "rating": 7 },
-        { "category": "check_in", "rating": 8 },
-        { "category": "location", "rating": 8 },
-        { "category": "accuracy", "rating": 8 },
-        { "category": "value", "rating": 6 }
+        {
+          "category": "cleanliness",
+          "rating": 8
+        },
+        {
+          "category": "communication",
+          "rating": 7
+        },
+        {
+          "category": "check_in",
+          "rating": 8
+        },
+        {
+          "category": "location",
+          "rating": 8
+        },
+        {
+          "category": "accuracy",
+          "rating": 8
+        },
+        {
+          "category": "value",
+          "rating": 6
+        }
       ],
-      "submittedAt": "2024-10-30 22:10:12",
+      "submittedAt": "2025-10-23 22:10:00",
       "guestName": "Monica Reyes",
       "guestEmail": "monica.reyes@example.com",
       "guestPlatformId": "direct_monica890",
@@ -743,13 +1349,28 @@
       "rating": null,
       "publicReview": "Caroline was considerate and left the home in great shape.",
       "reviewCategory": [
-        { "category": "cleanliness", "rating": 10 },
-        { "category": "communication", "rating": 10 },
-        { "category": "respect_house_rules", "rating": 10 },
-        { "category": "honesty", "rating": 10 },
-        { "category": "checkout_adherence", "rating": 10 }
+        {
+          "category": "cleanliness",
+          "rating": 10
+        },
+        {
+          "category": "communication",
+          "rating": 10
+        },
+        {
+          "category": "respect_house_rules",
+          "rating": 10
+        },
+        {
+          "category": "honesty",
+          "rating": 10
+        },
+        {
+          "category": "checkout_adherence",
+          "rating": 10
+        }
       ],
-      "submittedAt": "2025-07-08 08:22:19",
+      "submittedAt": "2025-10-25 14:22:00",
       "guestName": "Caroline West",
       "guestEmail": "caroline.west@example.com",
       "guestPlatformId": "airbnb_caroline678",
@@ -764,14 +1385,32 @@
       "rating": 5,
       "publicReview": "Epic warehouse vibes; surprisingly quiet at night.",
       "reviewCategory": [
-        { "category": "cleanliness", "rating": 10 },
-        { "category": "communication", "rating": 10 },
-        { "category": "check_in", "rating": 10 },
-        { "category": "location", "rating": 9 },
-        { "category": "accuracy", "rating": 9 },
-        { "category": "value", "rating": 9 }
+        {
+          "category": "cleanliness",
+          "rating": 10
+        },
+        {
+          "category": "communication",
+          "rating": 10
+        },
+        {
+          "category": "check_in",
+          "rating": 10
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "accuracy",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 9
+        }
       ],
-      "submittedAt": "2025-08-25 18:12:51",
+      "submittedAt": "2025-10-22 18:12:00",
       "guestName": "Peter Young",
       "guestEmail": "peter.young@example.com",
       "guestPlatformId": "airbnb_peter901",
@@ -785,14 +1424,32 @@
       "rating": 4,
       "publicReview": "Great stay; more hooks in the bathroom would help.",
       "reviewCategory": [
-        { "category": "cleanliness", "rating": 9 },
-        { "category": "communication", "rating": 9 },
-        { "category": "check_in", "rating": 9 },
-        { "category": "location", "rating": 9 },
-        { "category": "accuracy", "rating": 9 },
-        { "category": "value", "rating": 8 }
+        {
+          "category": "cleanliness",
+          "rating": 9
+        },
+        {
+          "category": "communication",
+          "rating": 9
+        },
+        {
+          "category": "check_in",
+          "rating": 9
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "accuracy",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 8
+        }
       ],
-      "submittedAt": "2025-05-12 11:44:36",
+      "submittedAt": "2025-10-21 11:44:00",
       "guestName": "Julia Steiner",
       "guestEmail": "julia.steiner@example.com",
       "guestPlatformId": "booking_julia012",
@@ -806,14 +1463,32 @@
       "rating": 3,
       "publicReview": "Cool space; curtains let in early light.",
       "reviewCategory": [
-        { "category": "cleanliness", "rating": 8 },
-        { "category": "communication", "rating": 8 },
-        { "category": "check_in", "rating": 9 },
-        { "category": "location", "rating": 9 },
-        { "category": "accuracy", "rating": 8 },
-        { "category": "value", "rating": 7 }
+        {
+          "category": "cleanliness",
+          "rating": 8
+        },
+        {
+          "category": "communication",
+          "rating": 8
+        },
+        {
+          "category": "check_in",
+          "rating": 9
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "accuracy",
+          "rating": 8
+        },
+        {
+          "category": "value",
+          "rating": 7
+        }
       ],
-      "submittedAt": "2024-12-17 07:31:55",
+      "submittedAt": "2025-10-20 07:31:00",
       "guestName": "Santiago Perez",
       "guestEmail": "santiago.perez@example.com",
       "guestPlatformId": "direct_santiago123",
@@ -827,13 +1502,28 @@
       "rating": null,
       "publicReview": "Peter was communicative and left the loft tidy.",
       "reviewCategory": [
-        { "category": "cleanliness", "rating": 10 },
-        { "category": "communication", "rating": 10 },
-        { "category": "respect_house_rules", "rating": 10 },
-        { "category": "honesty", "rating": 9 },
-        { "category": "checkout_adherence", "rating": 10 }
+        {
+          "category": "cleanliness",
+          "rating": 10
+        },
+        {
+          "category": "communication",
+          "rating": 10
+        },
+        {
+          "category": "respect_house_rules",
+          "rating": 10
+        },
+        {
+          "category": "honesty",
+          "rating": 9
+        },
+        {
+          "category": "checkout_adherence",
+          "rating": 10
+        }
       ],
-      "submittedAt": "2025-08-26 09:33:28",
+      "submittedAt": "2025-10-22 19:33:00",
       "guestName": "Peter Young",
       "guestEmail": "peter.young@example.com",
       "guestPlatformId": "airbnb_peter901",
@@ -848,13 +1538,28 @@
       "rating": null,
       "publicReview": "Liam was okay but left some dishes in the sink.",
       "reviewCategory": [
-        { "category": "cleanliness", "rating": 7 },
-        { "category": "communication", "rating": 8 },
-        { "category": "respect_house_rules", "rating": 8 },
-        { "category": "honesty", "rating": 9 },
-        { "category": "checkout_adherence", "rating": 7 }
+        {
+          "category": "cleanliness",
+          "rating": 7
+        },
+        {
+          "category": "communication",
+          "rating": 8
+        },
+        {
+          "category": "respect_house_rules",
+          "rating": 8
+        },
+        {
+          "category": "honesty",
+          "rating": 9
+        },
+        {
+          "category": "checkout_adherence",
+          "rating": 7
+        }
       ],
-      "submittedAt": "2024-10-02 10:15:30",
+      "submittedAt": "2025-10-23 10:15:00",
       "guestName": "Liam O'Connor",
       "guestEmail": "liam.oconnor@example.com",
       "guestPlatformId": "direct_liam890",
@@ -875,13 +1580,28 @@
       "rating": null,
       "publicReview": "Monica checked out late without notice and left some damage.",
       "reviewCategory": [
-        { "category": "cleanliness", "rating": 6 },
-        { "category": "communication", "rating": 5 },
-        { "category": "respect_house_rules", "rating": 5 },
-        { "category": "honesty", "rating": 6 },
-        { "category": "checkout_adherence", "rating": 4 }
+        {
+          "category": "cleanliness",
+          "rating": 6
+        },
+        {
+          "category": "communication",
+          "rating": 5
+        },
+        {
+          "category": "respect_house_rules",
+          "rating": 5
+        },
+        {
+          "category": "honesty",
+          "rating": 6
+        },
+        {
+          "category": "checkout_adherence",
+          "rating": 4
+        }
       ],
-      "submittedAt": "2024-10-31 14:25:45",
+      "submittedAt": "2025-10-23 11:25:00",
       "guestName": "Monica Reyes",
       "guestEmail": "monica.reyes@example.com",
       "guestPlatformId": "direct_monica890",
@@ -902,13 +1622,28 @@
       "rating": null,
       "publicReview": "Helena had a minor leak issue but didn't communicate well initially.",
       "reviewCategory": [
-        { "category": "cleanliness", "rating": 8 },
-        { "category": "communication", "rating": 6 },
-        { "category": "respect_house_rules", "rating": 9 },
-        { "category": "honesty", "rating": 9 },
-        { "category": "checkout_adherence", "rating": 9 }
+        {
+          "category": "cleanliness",
+          "rating": 8
+        },
+        {
+          "category": "communication",
+          "rating": 6
+        },
+        {
+          "category": "respect_house_rules",
+          "rating": 9
+        },
+        {
+          "category": "honesty",
+          "rating": 9
+        },
+        {
+          "category": "checkout_adherence",
+          "rating": 9
+        }
       ],
-      "submittedAt": "2024-11-29 11:30:22",
+      "submittedAt": "2025-10-21 11:30:00",
       "guestName": "Helena Novak",
       "guestEmail": "helena.novak@example.com",
       "guestPlatformId": "direct_helena234",
@@ -923,13 +1658,28 @@
       "rating": null,
       "publicReview": "Leo was polite but the apartment was left quite messy.",
       "reviewCategory": [
-        { "category": "cleanliness", "rating": 6 },
-        { "category": "communication", "rating": 8 },
-        { "category": "respect_house_rules", "rating": 8 },
-        { "category": "honesty", "rating": 9 },
-        { "category": "checkout_adherence", "rating": 7 }
+        {
+          "category": "cleanliness",
+          "rating": 6
+        },
+        {
+          "category": "communication",
+          "rating": 8
+        },
+        {
+          "category": "respect_house_rules",
+          "rating": 8
+        },
+        {
+          "category": "honesty",
+          "rating": 9
+        },
+        {
+          "category": "checkout_adherence",
+          "rating": 7
+        }
       ],
-      "submittedAt": "2024-10-15 13:20:15",
+      "submittedAt": "2025-10-21 13:20:00",
       "guestName": "Leo Martins",
       "guestEmail": "leo.martins@example.com",
       "guestPlatformId": "direct_leo123",
@@ -942,7 +1692,7 @@
     {
       "guestPlatformId": "direct_monica890",
       "propertyName": "9I N7 A - Islington Townhouse",
-      "date": "2024-10-30",
+      "date": "2025-10-24",
       "type": "damage",
       "description": "Stained sofa cushion and broken cabinet handle",
       "cost": 250,
@@ -951,7 +1701,7 @@
     {
       "guestPlatformId": "direct_liam890",
       "propertyName": "1A W2 C - Notting Hill Studio",
-      "date": "2024-10-01",
+      "date": "2025-10-26",
       "type": "cleanliness_issue",
       "description": "Left dishes unwashed and trash behind. Required extra cleaning.",
       "cost": 0,
