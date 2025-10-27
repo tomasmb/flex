@@ -1,0 +1,140 @@
+// Flex Living Reviews Dashboard - Database Schema
+// Based on architecture@1.0.0#data-model.v1
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Property {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  name        String
+  description String?
+  images      String?  // JSON string
+  amenities   String?  // JSON string
+  address     String?
+
+  // Bidirectional reviews
+  reviews     Review[]
+
+  // Booking configuration (from spec lines 815-820)
+  minStayNights         Int?
+  requireDeposit        Boolean  @default(false)
+  instantBookEnabled    Boolean  @default(true)
+  acceptanceRate        Float?   // % of bookings accepted
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([slug])
+  @@index([name])
+}
+
+model Guest {
+  id                    String   @id @default(cuid())
+  name                  String
+  email                 String?
+  platformId            String?  // External ID from Airbnb, Booking.com, etc.
+  platform              String?  // "airbnb", "booking.com", "hostaway", etc.
+
+  reviews               Review[]
+  incidents             Incident[]
+
+  // Risk scoring (from spec lines 833-836)
+  averageRating         Float?
+  totalStays            Int      @default(0)
+  riskScore             Float?   // 0-100
+  riskLevel             String?  // "low", "medium", "high"
+
+  // Blacklist management (from spec lines 838-841)
+  isBlacklisted         Boolean  @default(false)
+  isWatchlisted         Boolean  @default(false)
+  blacklistReason       String?
+
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+
+  @@index([email])
+  @@index([platformId])
+  @@index([riskLevel])
+  @@index([isBlacklisted])
+}
+
+model Review {
+  id                  String   @id @default(cuid())
+
+  // Core fields (from spec lines 848-855)
+  direction           String   // "guest-to-host" or "host-to-guest"
+  date                DateTime @map("submittedAt")
+  channel             String?  // "hostaway", "google", "direct", "airbnb", "booking.com"
+  rating              Float?   @map("overallRating")
+  text                String   @map("publicReview")
+
+  // Property relation
+  propertyId          String
+  property            Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+
+  // Guest relation (from spec lines 861-862)
+  guestId             String?
+  guest               Guest?   @relation(fields: [guestId], references: [id])
+
+  // Review source info
+  source              String   // "hostaway" or "google"
+  listingName         String   // Original listing name from API
+  guestName           String?  // Denormalized for convenience
+
+  // Guest-to-Host specific (from spec lines 864-868)
+  guestToHostSubRatings Json?    // { cleanliness: 9, communication: 10, location: 8, value: 9 }
+  categories          String   // JSON string: Array of { category: string, rating: number }
+  sentimentScore      Float?
+  keywords            Json?    // ["wifi", "clean", "helpful"]
+  isPublished         Boolean  @default(false) @map("approvedForWebsite")
+
+  // Host-to-Guest specific (from spec lines 870-873)
+  hostToGuestBehaviorRatings Json?  // { cleanliness: 8, houseRules: 9, communication: 10, honesty: 9, checkoutAdherence: 8 }
+  wouldHostAgain        Boolean?
+  incidentReported      Boolean  @default(false)
+
+  // Response management (from spec lines 875-877)
+  responseText          String?
+  respondedAt           DateTime?
+
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+
+  @@index([propertyId, isPublished])
+  @@index([propertyId, date])
+  @@index([listingName])
+  @@index([source])
+  @@index([date])
+  @@index([direction])
+  @@index([guestId])
+}
+
+model Incident {
+  id                    String   @id @default(cuid())
+
+  guestId               String
+  guest                 Guest    @relation(fields: [guestId], references: [id])
+
+  propertyId            String
+
+  date                  DateTime
+  type                  String   // "damage", "noise_complaint", "rule_violation", "police_involved", etc.
+  description           String
+  cost                  Float?   // Damage cost if applicable
+  resolved              Boolean  @default(false)
+
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+
+  @@index([guestId])
+  @@index([propertyId])
+  @@index([type])
+  @@index([resolved])
+}

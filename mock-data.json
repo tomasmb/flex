@@ -17,7 +17,10 @@
       ],
       "submittedAt": "2025-07-12 13:25:41",
       "guestName": "Alice Nguyen",
-      "listingName": "2B N1 A - 29 Shoreditch Heights"
+      "guestEmail": "alice.nguyen@example.com",
+      "guestPlatformId": "airbnb_alice123",
+      "listingName": "2B N1 A - 29 Shoreditch Heights",
+      "channel": "airbnb"
     },
     {
       "id": 8001,
@@ -35,7 +38,10 @@
       ],
       "submittedAt": "2025-04-05 21:02:10",
       "guestName": "Marco Silva",
-      "listingName": "2B N1 A - 29 Shoreditch Heights"
+      "guestEmail": "marco.silva@example.com",
+      "guestPlatformId": "booking_marco456",
+      "listingName": "2B N1 A - 29 Shoreditch Heights",
+      "channel": "booking.com"
     },
     {
       "id": 8002,
@@ -53,7 +59,10 @@
       ],
       "submittedAt": "2024-11-09 08:44:33",
       "guestName": "Chris Johnson",
-      "listingName": "2B N1 A - 29 Shoreditch Heights"
+      "guestEmail": "chris.johnson@example.com",
+      "guestPlatformId": "direct_chris789",
+      "listingName": "2B N1 A - 29 Shoreditch Heights",
+      "channel": "direct"
     },
     {
       "id": 8003,
@@ -64,13 +73,18 @@
       "reviewCategory": [
         { "category": "cleanliness", "rating": 10 },
         { "category": "communication", "rating": 10 },
-        { "category": "respect_house_rules", "rating": 10 }
+        { "category": "respect_house_rules", "rating": 10 },
+        { "category": "honesty", "rating": 10 },
+        { "category": "checkout_adherence", "rating": 10 }
       ],
       "submittedAt": "2025-07-13 10:11:55",
       "guestName": "Alice Nguyen",
-      "listingName": "2B N1 A - 29 Shoreditch Heights"
+      "guestEmail": "alice.nguyen@example.com",
+      "guestPlatformId": "airbnb_alice123",
+      "listingName": "2B N1 A - 29 Shoreditch Heights",
+      "channel": "airbnb",
+      "wouldHostAgain": true
     },
-
     {
       "id": 8004,
       "type": "guest-to-host",
@@ -87,7 +101,10 @@
       ],
       "submittedAt": "2025-08-22 17:40:09",
       "guestName": "Sofia Martinez",
-      "listingName": "1A W2 C - Notting Hill Studio"
+      "guestEmail": "sofia.martinez@example.com",
+      "guestPlatformId": "airbnb_sofia234",
+      "listingName": "1A W2 C - Notting Hill Studio",
+      "channel": "airbnb"
     },
     {
       "id": 8005,
@@ -105,7 +122,10 @@
       ],
       "submittedAt": "2025-06-15 09:12:57",
       "guestName": "Emma Brown",
-      "listingName": "1A W2 C - Notting Hill Studio"
+      "guestEmail": "emma.brown@example.com",
+      "guestPlatformId": "booking_emma567",
+      "listingName": "1A W2 C - Notting Hill Studio",
+      "channel": "booking.com"
     },
     {
       "id": 8006,
@@ -123,7 +143,10 @@
       ],
       "submittedAt": "2024-10-01 20:31:41",
       "guestName": "Liam O'Connor",
-      "listingName": "1A W2 C - Notting Hill Studio"
+      "guestEmail": "liam.oconnor@example.com",
+      "guestPlatformId": "direct_liam890",
+      "listingName": "1A W2 C - Notting Hill Studio",
+      "channel": "direct"
     },
     {
       "id": 8007,
@@ -134,13 +157,18 @@
       "reviewCategory": [
         { "category": "cleanliness", "rating": 10 },
         { "category": "communication", "rating": 10 },
-        { "category": "respect_house_rules", "rating": 10 }
+        { "category": "respect_house_rules", "rating": 10 },
+        { "category": "honesty", "rating": 10 },
+        { "category": "checkout_adherence", "rating": 10 }
       ],
       "submittedAt": "2025-08-23 11:05:19",
       "guestName": "Sofia Martinez",
-      "listingName": "1A W2 C - Notting Hill Studio"
+      "guestEmail": "sofia.martinez@example.com",
+      "guestPlatformId": "airbnb_sofia234",
+      "listingName": "1A W2 C - Notting Hill Studio",
+      "channel": "airbnb",
+      "wouldHostAgain": true
     },
-
     {
       "id": 8008,
       "type": "guest-to-host",
@@ -157,7 +185,10 @@
       ],
       "submittedAt": "2025-09-10 12:10:05",
       "guestName": "Hannah Lee",
-      "listingName": "3C E1 B - Brick Lane Loft"
+      "guestEmail": "hannah.lee@example.com",
+      "guestPlatformId": "airbnb_hannah345",
+      "listingName": "3C E1 B - Brick Lane Loft",
+      "channel": "airbnb"
     },
     {
       "id": 8009,
@@ -175,7 +206,10 @@
       ],
       "submittedAt": "2025-05-27 18:55:12",
       "guestName": "Priya Patel",
-      "listingName": "3C E1 B - Brick Lane Loft"
+      "guestEmail": "priya.patel@example.com",
+      "guestPlatformId": "booking_priya678",
+      "listingName": "3C E1 B - Brick Lane Loft",
+      "channel": "booking.com"
     },
     {
       "id": 8010,
@@ -193,7 +227,10 @@
       ],
       "submittedAt": "2024-12-11 19:44:02",
       "guestName": "Daniel Kim",
-      "listingName": "3C E1 B - Brick Lane Loft"
+      "guestEmail": "daniel.kim@example.com",
+      "guestPlatformId": "direct_daniel901",
+      "listingName": "3C E1 B - Brick Lane Loft",
+      "channel": "direct"
     },
     {
       "id": 8011,
@@ -204,13 +241,18 @@
       "reviewCategory": [
         { "category": "cleanliness", "rating": 10 },
         { "category": "communication", "rating": 10 },
-        { "category": "respect_house_rules", "rating": 10 }
+        { "category": "respect_house_rules", "rating": 10 },
+        { "category": "honesty", "rating": 10 },
+        { "category": "checkout_adherence", "rating": 10 }
       ],
       "submittedAt": "2025-09-11 09:02:41",
       "guestName": "Hannah Lee",
-      "listingName": "3C E1 B - Brick Lane Loft"
+      "guestEmail": "hannah.lee@example.com",
+      "guestPlatformId": "airbnb_hannah345",
+      "listingName": "3C E1 B - Brick Lane Loft",
+      "channel": "airbnb",
+      "wouldHostAgain": true
     },
-
     {
       "id": 8012,
       "type": "guest-to-host",
@@ -227,7 +269,10 @@
       ],
       "submittedAt": "2025-06-30 16:12:09",
       "guestName": "Daniel Kim",
-      "listingName": "4D NW1 D - Camden Garden Flat"
+      "guestEmail": "daniel.kim@example.com",
+      "guestPlatformId": "direct_daniel901",
+      "listingName": "4D NW1 D - Camden Garden Flat",
+      "channel": "direct"
     },
     {
       "id": 8013,
@@ -245,7 +290,10 @@
       ],
       "submittedAt": "2025-03-18 10:44:33",
       "guestName": "Yuki Tanaka",
-      "listingName": "4D NW1 D - Camden Garden Flat"
+      "guestEmail": "yuki.tanaka@example.com",
+      "guestPlatformId": "airbnb_yuki012",
+      "listingName": "4D NW1 D - Camden Garden Flat",
+      "channel": "airbnb"
     },
     {
       "id": 8014,
@@ -263,7 +311,10 @@
       ],
       "submittedAt": "2024-09-22 14:21:44",
       "guestName": "Grace Chen",
-      "listingName": "4D NW1 D - Camden Garden Flat"
+      "guestEmail": "grace.chen@example.com",
+      "guestPlatformId": "booking_grace345",
+      "listingName": "4D NW1 D - Camden Garden Flat",
+      "channel": "booking.com"
     },
     {
       "id": 8015,
@@ -274,13 +325,18 @@
       "reviewCategory": [
         { "category": "cleanliness", "rating": 10 },
         { "category": "communication", "rating": 10 },
-        { "category": "respect_house_rules", "rating": 10 }
+        { "category": "respect_house_rules", "rating": 10 },
+        { "category": "honesty", "rating": 10 },
+        { "category": "checkout_adherence", "rating": 10 }
       ],
       "submittedAt": "2025-03-19 09:20:18",
       "guestName": "Yuki Tanaka",
-      "listingName": "4D NW1 D - Camden Garden Flat"
+      "guestEmail": "yuki.tanaka@example.com",
+      "guestPlatformId": "airbnb_yuki012",
+      "listingName": "4D NW1 D - Camden Garden Flat",
+      "channel": "airbnb",
+      "wouldHostAgain": true
     },
-
     {
       "id": 8016,
       "type": "guest-to-host",
@@ -297,7 +353,10 @@
       ],
       "submittedAt": "2025-08-02 11:55:49",
       "guestName": "Tom Becker",
-      "listingName": "5E SE1 A - South Bank View"
+      "guestEmail": "tom.becker@example.com",
+      "guestPlatformId": "airbnb_tom456",
+      "listingName": "5E SE1 A - South Bank View",
+      "channel": "airbnb"
     },
     {
       "id": 8017,
@@ -315,7 +374,10 @@
       ],
       "submittedAt": "2025-05-06 07:33:02",
       "guestName": "Marta Kowalski",
-      "listingName": "5E SE1 A - South Bank View"
+      "guestEmail": "marta.kowalski@example.com",
+      "guestPlatformId": "booking_marta789",
+      "listingName": "5E SE1 A - South Bank View",
+      "channel": "booking.com"
     },
     {
       "id": 8018,
@@ -333,7 +395,10 @@
       ],
       "submittedAt": "2024-10-14 21:14:29",
       "guestName": "Leo Martins",
-      "listingName": "5E SE1 A - South Bank View"
+      "guestEmail": "leo.martins@example.com",
+      "guestPlatformId": "direct_leo123",
+      "listingName": "5E SE1 A - South Bank View",
+      "channel": "direct"
     },
     {
       "id": 8019,
@@ -344,13 +409,18 @@
       "reviewCategory": [
         { "category": "cleanliness", "rating": 10 },
         { "category": "communication", "rating": 10 },
-        { "category": "respect_house_rules", "rating": 10 }
+        { "category": "respect_house_rules", "rating": 10 },
+        { "category": "honesty", "rating": 9 },
+        { "category": "checkout_adherence", "rating": 10 }
       ],
       "submittedAt": "2025-08-03 09:01:13",
       "guestName": "Tom Becker",
-      "listingName": "5E SE1 A - South Bank View"
+      "guestEmail": "tom.becker@example.com",
+      "guestPlatformId": "airbnb_tom456",
+      "listingName": "5E SE1 A - South Bank View",
+      "channel": "airbnb",
+      "wouldHostAgain": true
     },
-
     {
       "id": 8020,
       "type": "guest-to-host",
@@ -367,7 +437,10 @@
       ],
       "submittedAt": "2025-07-28 15:10:37",
       "guestName": "Sara Lopez",
-      "listingName": "6F SW1 B - Westminster Mews"
+      "guestEmail": "sara.lopez@example.com",
+      "guestPlatformId": "airbnb_sara567",
+      "listingName": "6F SW1 B - Westminster Mews",
+      "channel": "airbnb"
     },
     {
       "id": 8021,
@@ -385,7 +458,10 @@
       ],
       "submittedAt": "2025-03-02 19:18:11",
       "guestName": "Jonah Park",
-      "listingName": "6F SW1 B - Westminster Mews"
+      "guestEmail": "jonah.park@example.com",
+      "guestPlatformId": "booking_jonah890",
+      "listingName": "6F SW1 B - Westminster Mews",
+      "channel": "booking.com"
     },
     {
       "id": 8022,
@@ -403,7 +479,10 @@
       ],
       "submittedAt": "2024-12-20 13:44:59",
       "guestName": "Chen Wei",
-      "listingName": "6F SW1 B - Westminster Mews"
+      "guestEmail": "chen.wei@example.com",
+      "guestPlatformId": "direct_chen012",
+      "listingName": "6F SW1 B - Westminster Mews",
+      "channel": "direct"
     },
     {
       "id": 8023,
@@ -414,13 +493,18 @@
       "reviewCategory": [
         { "category": "cleanliness", "rating": 10 },
         { "category": "communication", "rating": 10 },
-        { "category": "respect_house_rules", "rating": 10 }
+        { "category": "respect_house_rules", "rating": 10 },
+        { "category": "honesty", "rating": 10 },
+        { "category": "checkout_adherence", "rating": 10 }
       ],
       "submittedAt": "2025-07-29 09:40:01",
       "guestName": "Sara Lopez",
-      "listingName": "6F SW1 B - Westminster Mews"
+      "guestEmail": "sara.lopez@example.com",
+      "guestPlatformId": "airbnb_sara567",
+      "listingName": "6F SW1 B - Westminster Mews",
+      "channel": "airbnb",
+      "wouldHostAgain": true
     },
-
     {
       "id": 8024,
       "type": "guest-to-host",
@@ -437,7 +521,10 @@
       ],
       "submittedAt": "2025-09-03 08:05:42",
       "guestName": "Nina Rossi",
-      "listingName": "7G E2 A - Bethnal Green Terrace"
+      "guestEmail": "nina.rossi@example.com",
+      "guestPlatformId": "airbnb_nina678",
+      "listingName": "7G E2 A - Bethnal Green Terrace",
+      "channel": "airbnb"
     },
     {
       "id": 8025,
@@ -455,7 +542,10 @@
       ],
       "submittedAt": "2025-06-09 12:21:19",
       "guestName": "Omar Faruk",
-      "listingName": "7G E2 A - Bethnal Green Terrace"
+      "guestEmail": "omar.faruk@example.com",
+      "guestPlatformId": "booking_omar901",
+      "listingName": "7G E2 A - Bethnal Green Terrace",
+      "channel": "booking.com"
     },
     {
       "id": 8026,
@@ -473,7 +563,10 @@
       ],
       "submittedAt": "2024-11-28 07:40:15",
       "guestName": "Helena Novak",
-      "listingName": "7G E2 A - Bethnal Green Terrace"
+      "guestEmail": "helena.novak@example.com",
+      "guestPlatformId": "direct_helena234",
+      "listingName": "7G E2 A - Bethnal Green Terrace",
+      "channel": "direct"
     },
     {
       "id": 8027,
@@ -484,13 +577,18 @@
       "reviewCategory": [
         { "category": "cleanliness", "rating": 10 },
         { "category": "communication", "rating": 10 },
-        { "category": "respect_house_rules", "rating": 10 }
+        { "category": "respect_house_rules", "rating": 10 },
+        { "category": "honesty", "rating": 10 },
+        { "category": "checkout_adherence", "rating": 10 }
       ],
       "submittedAt": "2025-09-04 09:15:23",
       "guestName": "Nina Rossi",
-      "listingName": "7G E2 A - Bethnal Green Terrace"
+      "guestEmail": "nina.rossi@example.com",
+      "guestPlatformId": "airbnb_nina678",
+      "listingName": "7G E2 A - Bethnal Green Terrace",
+      "channel": "airbnb",
+      "wouldHostAgain": true
     },
-
     {
       "id": 8028,
       "type": "guest-to-host",
@@ -507,7 +605,10 @@
       ],
       "submittedAt": "2025-08-18 10:32:44",
       "guestName": "Rafael Gomez",
-      "listingName": "8H EC1 A - Clerkenwell Courtyard"
+      "guestEmail": "rafael.gomez@example.com",
+      "guestPlatformId": "airbnb_rafael345",
+      "listingName": "8H EC1 A - Clerkenwell Courtyard",
+      "channel": "airbnb"
     },
     {
       "id": 8029,
@@ -525,7 +626,10 @@
       ],
       "submittedAt": "2025-04-26 19:11:07",
       "guestName": "Linda Park",
-      "listingName": "8H EC1 A - Clerkenwell Courtyard"
+      "guestEmail": "linda.park@example.com",
+      "guestPlatformId": "booking_linda456",
+      "listingName": "8H EC1 A - Clerkenwell Courtyard",
+      "channel": "booking.com"
     },
     {
       "id": 8030,
@@ -543,7 +647,10 @@
       ],
       "submittedAt": "2024-12-05 09:48:26",
       "guestName": "Victor Almeida",
-      "listingName": "8H EC1 A - Clerkenwell Courtyard"
+      "guestEmail": "victor.almeida@example.com",
+      "guestPlatformId": "direct_victor567",
+      "listingName": "8H EC1 A - Clerkenwell Courtyard",
+      "channel": "direct"
     },
     {
       "id": 8031,
@@ -554,13 +661,18 @@
       "reviewCategory": [
         { "category": "cleanliness", "rating": 10 },
         { "category": "communication", "rating": 10 },
-        { "category": "respect_house_rules", "rating": 10 }
+        { "category": "respect_house_rules", "rating": 10 },
+        { "category": "honesty", "rating": 10 },
+        { "category": "checkout_adherence", "rating": 10 }
       ],
       "submittedAt": "2025-08-19 08:57:03",
       "guestName": "Rafael Gomez",
-      "listingName": "8H EC1 A - Clerkenwell Courtyard"
+      "guestEmail": "rafael.gomez@example.com",
+      "guestPlatformId": "airbnb_rafael345",
+      "listingName": "8H EC1 A - Clerkenwell Courtyard",
+      "channel": "airbnb",
+      "wouldHostAgain": true
     },
-
     {
       "id": 8032,
       "type": "guest-to-host",
@@ -577,7 +689,10 @@
       ],
       "submittedAt": "2025-07-07 14:03:32",
       "guestName": "Caroline West",
-      "listingName": "9I N7 A - Islington Townhouse"
+      "guestEmail": "caroline.west@example.com",
+      "guestPlatformId": "airbnb_caroline678",
+      "listingName": "9I N7 A - Islington Townhouse",
+      "channel": "airbnb"
     },
     {
       "id": 8033,
@@ -595,7 +710,10 @@
       ],
       "submittedAt": "2025-03-24 09:21:44",
       "guestName": "Ahmed Hassan",
-      "listingName": "9I N7 A - Islington Townhouse"
+      "guestEmail": "ahmed.hassan@example.com",
+      "guestPlatformId": "booking_ahmed789",
+      "listingName": "9I N7 A - Islington Townhouse",
+      "channel": "booking.com"
     },
     {
       "id": 8034,
@@ -613,7 +731,10 @@
       ],
       "submittedAt": "2024-10-30 22:10:12",
       "guestName": "Monica Reyes",
-      "listingName": "9I N7 A - Islington Townhouse"
+      "guestEmail": "monica.reyes@example.com",
+      "guestPlatformId": "direct_monica890",
+      "listingName": "9I N7 A - Islington Townhouse",
+      "channel": "direct"
     },
     {
       "id": 8035,
@@ -624,13 +745,18 @@
       "reviewCategory": [
         { "category": "cleanliness", "rating": 10 },
         { "category": "communication", "rating": 10 },
-        { "category": "respect_house_rules", "rating": 10 }
+        { "category": "respect_house_rules", "rating": 10 },
+        { "category": "honesty", "rating": 10 },
+        { "category": "checkout_adherence", "rating": 10 }
       ],
       "submittedAt": "2025-07-08 08:22:19",
       "guestName": "Caroline West",
-      "listingName": "9I N7 A - Islington Townhouse"
+      "guestEmail": "caroline.west@example.com",
+      "guestPlatformId": "airbnb_caroline678",
+      "listingName": "9I N7 A - Islington Townhouse",
+      "channel": "airbnb",
+      "wouldHostAgain": true
     },
-
     {
       "id": 8036,
       "type": "guest-to-host",
@@ -647,7 +773,10 @@
       ],
       "submittedAt": "2025-08-25 18:12:51",
       "guestName": "Peter Young",
-      "listingName": "10J E3 B - Hackney Wick Warehouse"
+      "guestEmail": "peter.young@example.com",
+      "guestPlatformId": "airbnb_peter901",
+      "listingName": "10J E3 B - Hackney Wick Warehouse",
+      "channel": "airbnb"
     },
     {
       "id": 8037,
@@ -665,7 +794,10 @@
       ],
       "submittedAt": "2025-05-12 11:44:36",
       "guestName": "Julia Steiner",
-      "listingName": "10J E3 B - Hackney Wick Warehouse"
+      "guestEmail": "julia.steiner@example.com",
+      "guestPlatformId": "booking_julia012",
+      "listingName": "10J E3 B - Hackney Wick Warehouse",
+      "channel": "booking.com"
     },
     {
       "id": 8038,
@@ -683,7 +815,10 @@
       ],
       "submittedAt": "2024-12-17 07:31:55",
       "guestName": "Santiago Perez",
-      "listingName": "10J E3 B - Hackney Wick Warehouse"
+      "guestEmail": "santiago.perez@example.com",
+      "guestPlatformId": "direct_santiago123",
+      "listingName": "10J E3 B - Hackney Wick Warehouse",
+      "channel": "direct"
     },
     {
       "id": 8039,
@@ -694,11 +829,133 @@
       "reviewCategory": [
         { "category": "cleanliness", "rating": 10 },
         { "category": "communication", "rating": 10 },
-        { "category": "respect_house_rules", "rating": 10 }
+        { "category": "respect_house_rules", "rating": 10 },
+        { "category": "honesty", "rating": 9 },
+        { "category": "checkout_adherence", "rating": 10 }
       ],
       "submittedAt": "2025-08-26 09:33:28",
       "guestName": "Peter Young",
-      "listingName": "10J E3 B - Hackney Wick Warehouse"
+      "guestEmail": "peter.young@example.com",
+      "guestPlatformId": "airbnb_peter901",
+      "listingName": "10J E3 B - Hackney Wick Warehouse",
+      "channel": "airbnb",
+      "wouldHostAgain": true
+    },
+    {
+      "id": 9000,
+      "type": "host-to-guest",
+      "status": "published",
+      "rating": null,
+      "publicReview": "Liam was okay but left some dishes in the sink.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 7 },
+        { "category": "communication", "rating": 8 },
+        { "category": "respect_house_rules", "rating": 8 },
+        { "category": "honesty", "rating": 9 },
+        { "category": "checkout_adherence", "rating": 7 }
+      ],
+      "submittedAt": "2024-10-02 10:15:30",
+      "guestName": "Liam O'Connor",
+      "guestEmail": "liam.oconnor@example.com",
+      "guestPlatformId": "direct_liam890",
+      "listingName": "1A W2 C - Notting Hill Studio",
+      "channel": "direct",
+      "wouldHostAgain": false,
+      "incident": {
+        "type": "cleanliness_issue",
+        "description": "Left dishes unwashed and some trash behind",
+        "cost": 0,
+        "resolved": true
+      }
+    },
+    {
+      "id": 9001,
+      "type": "host-to-guest",
+      "status": "published",
+      "rating": null,
+      "publicReview": "Monica checked out late without notice and left some damage.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 6 },
+        { "category": "communication", "rating": 5 },
+        { "category": "respect_house_rules", "rating": 5 },
+        { "category": "honesty", "rating": 6 },
+        { "category": "checkout_adherence", "rating": 4 }
+      ],
+      "submittedAt": "2024-10-31 14:25:45",
+      "guestName": "Monica Reyes",
+      "guestEmail": "monica.reyes@example.com",
+      "guestPlatformId": "direct_monica890",
+      "listingName": "9I N7 A - Islington Townhouse",
+      "channel": "direct",
+      "wouldHostAgain": false,
+      "incident": {
+        "type": "damage",
+        "description": "Stained sofa cushion and broken cabinet handle",
+        "cost": 250,
+        "resolved": true
+      }
+    },
+    {
+      "id": 9002,
+      "type": "host-to-guest",
+      "status": "published",
+      "rating": null,
+      "publicReview": "Helena had a minor leak issue but didn't communicate well initially.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 6 },
+        { "category": "respect_house_rules", "rating": 9 },
+        { "category": "honesty", "rating": 9 },
+        { "category": "checkout_adherence", "rating": 9 }
+      ],
+      "submittedAt": "2024-11-29 11:30:22",
+      "guestName": "Helena Novak",
+      "guestEmail": "helena.novak@example.com",
+      "guestPlatformId": "direct_helena234",
+      "listingName": "7G E2 A - Bethnal Green Terrace",
+      "channel": "direct",
+      "wouldHostAgain": true
+    },
+    {
+      "id": 9003,
+      "type": "host-to-guest",
+      "status": "published",
+      "rating": null,
+      "publicReview": "Leo was polite but the apartment was left quite messy.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 6 },
+        { "category": "communication", "rating": 8 },
+        { "category": "respect_house_rules", "rating": 8 },
+        { "category": "honesty", "rating": 9 },
+        { "category": "checkout_adherence", "rating": 7 }
+      ],
+      "submittedAt": "2024-10-15 13:20:15",
+      "guestName": "Leo Martins",
+      "guestEmail": "leo.martins@example.com",
+      "guestPlatformId": "direct_leo123",
+      "listingName": "5E SE1 A - South Bank View",
+      "channel": "direct",
+      "wouldHostAgain": false
+    }
+  ],
+  "incidents": [
+    {
+      "guestPlatformId": "direct_monica890",
+      "propertyName": "9I N7 A - Islington Townhouse",
+      "date": "2024-10-30",
+      "type": "damage",
+      "description": "Stained sofa cushion and broken cabinet handle",
+      "cost": 250,
+      "resolved": true
+    },
+    {
+      "guestPlatformId": "direct_liam890",
+      "propertyName": "1A W2 C - Notting Hill Studio",
+      "date": "2024-10-01",
+      "type": "cleanliness_issue",
+      "description": "Left dishes unwashed and trash behind. Required extra cleaning.",
+      "cost": 0,
+      "resolved": true
     }
   ]
 }
