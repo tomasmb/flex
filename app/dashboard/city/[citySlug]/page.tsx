@@ -87,10 +87,10 @@ export default async function CityViewPage({ params }: PageProps) {
       hostToGuestCount: hostToGuestReviews.length,
       approvedCount,
       approvalRate,
-      healthStatus: propertyHealth.quadrant, // Legacy
-      worstCaseColor: propertyHealth.worstCase?.color, // NEW: For card color
-      propertySeverityLabel: propertyHealth.propertySeverity?.label, // NEW: For tooltip
-      guestSeverityLabel: propertyHealth.guestSeverity?.label, // NEW: For tooltip
+      healthStatus: propertyHealth.quadrant,
+      worstCaseColor: propertyHealth.worstCase?.color,
+      propertySeverityLabel: propertyHealth.propertySeverity?.label,
+      guestSeverityLabel: propertyHealth.guestSeverity?.label,
     };
   });
 

@@ -140,7 +140,7 @@ export interface PropertyHealth {
   guestToHostRating: number;
   hostToGuestRating: number;
   recommendation: string;
-  propertySeverity?: MetricSeverity; // NEW: Independent property evaluation
-  guestSeverity?: MetricSeverity;    // NEW: Independent guest evaluation
-  worstCase?: MetricSeverity;        // NEW: Worst of the two (for card color)
+  propertySeverity?: MetricSeverity; // Independent property evaluation
+  guestSeverity?: MetricSeverity;    // Independent guest evaluation
+  worstCase?: MetricSeverity;        // Worst of the two (for card color)
 }

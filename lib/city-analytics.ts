@@ -14,13 +14,13 @@ export interface CityMetrics {
   totalReviews: number;
   averageRating: number;
   approvalRate: number;
-  healthStatus: PropertyHealthQuadrant; // Legacy: for backward compatibility
+  healthStatus: PropertyHealthQuadrant; // For backward compatibility
   guestToHostAvg: number;
   hostToGuestAvg: number;
-  worstCaseColor?: string; // NEW: Worst-case severity color ('green', 'yellow', 'orange', 'red')
-  propertySeverityLabel?: string; // NEW: Property severity label for tooltip
-  guestSeverityLabel?: string; // NEW: Guest severity label for tooltip
-  propertiesAtRisk: number; // NEW: Count of properties with low ratings in last 30 days
+  worstCaseColor?: string; // Worst-case severity color ('green', 'yellow', 'orange', 'red')
+  propertySeverityLabel?: string; // Property severity label for tooltip
+  guestSeverityLabel?: string; // Guest severity label for tooltip
+  propertiesAtRisk: number; // Count of properties with low ratings in last 30 days
 }
 
 type PropertyWithReviews = Property & {
@@ -129,13 +129,13 @@ export function calculateCityMetrics(
       totalReviews: allReviews.length,
       averageRating,
       approvalRate,
-      healthStatus: propertyHealth.quadrant, // Legacy
+      healthStatus: propertyHealth.quadrant,
       guestToHostAvg,
       hostToGuestAvg,
-      worstCaseColor, // NEW: Worst-case color for card (overridden if properties at risk)
-      propertySeverityLabel: propertyHealth.propertySeverity?.label, // NEW: For tooltip
-      guestSeverityLabel: propertyHealth.guestSeverity?.label, // NEW: For tooltip
-      propertiesAtRisk, // NEW: Properties at risk count
+      worstCaseColor,
+      propertySeverityLabel: propertyHealth.propertySeverity?.label,
+      guestSeverityLabel: propertyHealth.guestSeverity?.label,
+      propertiesAtRisk,
     });
   });
 

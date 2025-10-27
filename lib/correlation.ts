@@ -147,9 +147,9 @@ export function calculatePropertyHealth(
     guestToHostRating,
     hostToGuestRating,
     recommendation,
-    propertySeverity, // NEW: expose individual severities
-    guestSeverity,    // NEW: expose individual severities
-    worstCase,        // NEW: expose worst case for UI
+    propertySeverity, // Individual property severity for detailed analysis
+    guestSeverity,    // Individual guest severity for detailed analysis
+    worstCase,        // Worst case severity for UI display
   };
 }
 

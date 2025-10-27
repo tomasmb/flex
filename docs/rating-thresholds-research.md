@@ -198,11 +198,11 @@ Properties with ratings between 4.0-4.69 (guest-to-host) or 4.0-4.49 (host-to-gu
 
 ## Validation Against Flex Living Portfolio
 
-**TODO (Future):** Once sufficient review data is collected:
-1. Analyze distribution of Flex properties across quadrants
-2. Validate if thresholds correctly identify known good/poor performers
-3. Adjust thresholds if portfolio skews significantly different from market
-4. Track threshold effectiveness over time
+As the portfolio grows and more review data is collected, these thresholds should be validated through:
+1. Analyzing distribution of Flex properties across quadrants
+2. Validating that thresholds correctly identify known good/poor performers
+3. Adjusting thresholds if portfolio skews significantly different from market
+4. Tracking threshold effectiveness over time
 
 ## Alternative Threshold Considerations
 

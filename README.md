@@ -85,16 +85,22 @@ Visit http://localhost:3000 🎉
 
 Comprehensive design docs are available in the `docs/` directory:
 
+### Core Documentation
+- **[`00-scope.md`](docs/00-scope.md)** — Product scope and requirements
+- **[`10-dashboard-metrics.md`](docs/10-dashboard-metrics.md)** — Dashboard functional specification
+- **[`20-architecture.md`](docs/20-architecture.md)** — Technical architecture and API contracts
+- **[`30-design-system.md`](docs/30-design-system.md)** — Design system and UI patterns
 - **[`rating-thresholds-research.md`](docs/rating-thresholds-research.md)** — Research-backed property rating thresholds
   - Industry benchmarks (Airbnb, Booking.com)
   - Rationale for 4.7/4.5 thresholds
   - ⚠️ **Rating scale system** (5-point overall, 10-point categories)
   - Property health quadrant definitions
-- **[`10-dashboard-metrics.md`](docs/10-dashboard-metrics.md)** — Dashboard functional specification
-- **[`00-scope.md`](docs/00-scope.md)** — Product scope and requirements
-- **[`20-architecture.md`](docs/20-architecture.md)** — Technical architecture
-- **[`30-design-system.md`](docs/30-design-system.md)** — Design system and UI patterns
-- **[`google-reviews-findings.md`](docs/google-reviews-findings.md)** — Google Reviews integration research
+- **[`google-reviews-findings.md`](docs/google-reviews-findings.md)** — Google Reviews integration (live implementation)
+
+### Additional Resources
+- **[`40-nextjs-best-practices.md`](docs/40-nextjs-best-practices.md)** — Next.js patterns and conventions
+- **[`50-infrastructure.md`](docs/50-infrastructure.md)** — Deployment and infrastructure guide
+- **[`threshold-display-ux-research.md`](docs/threshold-display-ux-research.md)** — UX research for dashboard tooltips
 
 ## 🛠️ Tech Stack
 
@@ -416,10 +422,9 @@ npm run db:seed
 - `DATABASE_URL="postgresql://localhost:5432/..."` → Safe (local)
 - `DATABASE_URL="postgresql://production.db:5432/..."` → Dangerous!
 
-## 📞 Support
+## 📞 Contact
 
-For questions or issues:
-- GitHub Issues: [Create an issue](https://github.com/yourusername/flex-reviews-dashboard/issues)
+For questions about this assessment project:
 - Email: tomas@theflex.global
 
 ## 📄 License
